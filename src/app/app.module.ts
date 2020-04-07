@@ -8,6 +8,7 @@ import {
   MatDialogModule,
   MatSidenavModule,
   MatToolbarModule,
+  MatGridListModule,
 } from '@angular/material';
 
 import { HomeComponent } from './home/home.component';
@@ -23,10 +24,11 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatFormioModule,
-    MatToolbarModule,
     MatButtonModule,
+    MatDialogModule,
     MatSidenavModule,
-    MatDialogModule
+    MatToolbarModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [HomeComponent],
