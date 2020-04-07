@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormioModule } from 'angular-material-formio';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatDialogModule } from '@angular/material/dialog';
+import {
+  MatButtonModule,
+  MatDialogModule,
+  MatSidenavModule,
+  MatToolbarModule,
+} from '@angular/material';
 
 import { HomeComponent } from './home/home.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
@@ -27,6 +29,9 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     MatDialogModule
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [HomeComponent],
+  entryComponents: [
+    DialogComponent
+  ]
 })
 export class AppModule { }
