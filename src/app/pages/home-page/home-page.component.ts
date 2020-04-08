@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogComponent } from '../shared/dialog/dialog.component'
+import { DialogComponent } from '../../components/dialog/dialog.component'
 import { MatDialog, MatDialogConfig } from '@angular/material'
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 

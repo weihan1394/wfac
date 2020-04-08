@@ -1,0 +1,33 @@
+<mat-sidenav-container class="all-wrap">
+
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1>VMware</h1>
+    </mat-toolbar>
+
+    <div fxLayout="row">
+        <mat-drawer-container>
+            <mat-drawer #snav [mode]="'side'">
+                <mat-nav-list>
+                    <a mat-list-item routerLink='/home' routerLinkActive="active">Home</a>
+                    <a mat-list-item routerLink='/about' routerLinkActive="active">About</a>
+                </mat-nav-list>
+            </mat-drawer>
+
+            <mat-drawer-content>
+                <p *ngFor="let content of fillerContent">{{content}}</p>
+                <button (click)="openModal()">Open Dialog</button>
+                <!-- <mat-card>
+                <mat-formio src="https://examples.form.io/example" (submit)="onSubmit($event)"></mat-formio>
+                <mat-formio [form]="form" [submission]="submission" (submit)="onSubmit($event)"></mat-formio>
+            </mat-card>
+            
+            <div style="text-align:center">
+                <button (click)="openModal()">Open Dialog</button>
+            </div> -->
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </div>
+</mat-sidenav-container>

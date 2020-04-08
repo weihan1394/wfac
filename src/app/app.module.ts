@@ -11,14 +11,21 @@ import {
   MatGridListModule,
 } from '@angular/material';
 
-import { HomeComponent } from './home/home.component';
-import { DialogComponent } from './shared/dialog/dialog.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './components/footer/footer.component';
+import { MainComponent } from './root/main/main.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    DialogComponent
+    DialogComponent,
+    HomePageComponent,
+    AboutPageComponent,
+    FooterComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +36,10 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     MatSidenavModule,
     MatToolbarModule,
     MatGridListModule,
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [HomeComponent],
+  bootstrap: [MainComponent],
   entryComponents: [
     DialogComponent
   ]
