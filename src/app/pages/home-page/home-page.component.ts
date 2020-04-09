@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit {
 
 
   ngOnInit() {
+    this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
   }
 
   // handle the model dialog
@@ -42,5 +43,13 @@ export class HomePageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       alert("response: " + result)
     });
+  }
+
+  matVersion: string = '5.1.0';
+  breakpoint: number;
+
+
+  onResize(event) {
+    this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
   }
 }
