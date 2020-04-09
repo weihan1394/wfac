@@ -1,8 +1,10 @@
 <div class="example-container">
     <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
         <h1 class="example-app-name">VMware</h1>
-      </mat-toolbar>
+    </mat-toolbar>
 
 
     <mat-sidenav-container class="example-sidenav-container">
@@ -16,7 +18,23 @@
         </mat-sidenav>
 
         <mat-sidenav-content class="content">
-            <p> hello </p>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                        bred for hunting.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button (click)="openModal()">Apply</button>
+                </mat-card-actions>
+            </mat-card>
         </mat-sidenav-content>
     </mat-sidenav-container>
 
