@@ -19,5 +19,4 @@ export class AboutPageComponent implements OnInit {
   onSubmit(submission) {
     console.log(submission);
   }
-
 }
