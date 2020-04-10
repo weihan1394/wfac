@@ -36,6 +36,8 @@
             <h1>hello</h1>
             <br />
             <br />
+            <mat-formio [form]="customForm" (submit)="onSubmit($event)"></mat-formio>
+
             <pre>{{ customForm | json}}</pre>
 
         </div>

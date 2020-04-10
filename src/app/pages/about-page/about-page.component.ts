@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as ubuntu from '../../../assets/ubuntu.json';
+import ubuntu from '../../../assets/ubuntu.json';
 
 @Component({
   selector: 'app-about-page',
@@ -12,6 +12,8 @@ export class AboutPageComponent implements OnInit {
   customForm = ubuntu;
 
   ngOnInit() {
+    // this.customForm = ubuntu;
+    console.log(this.customForm)
   }
 
   onSubmit(submission) {
