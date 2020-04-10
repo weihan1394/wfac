@@ -1,0 +1,42 @@
+{
+    "type": "form",
+    "display": "form",
+    "components": [
+        {
+            "type": "email",
+            "placeholder": "Enter your email address",
+            "key": "email",
+            "label": "Email",
+            "inputType": "email",
+            "input": true,
+            "validate": {
+                "required": true
+            },
+            "row": ""
+        },
+        {
+            "type": "password",
+            "placeholder": "Enter your password",
+            "key": "password",
+            "label": "Password",
+            "inputType": "password",
+            "input": true,
+            "validate": {
+                "required": true
+            },
+            "row": ""
+        },
+        {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": true,
+            "action": "submit",
+            "size": "md",
+            "key": "submit",
+            "label": "Submit",
+            "input": true,
+            "block": true,
+            "row": ""
+        }
+    ]
+}
