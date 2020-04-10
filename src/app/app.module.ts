@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormioModule } from 'angular-material-formio';
 
@@ -10,6 +10,8 @@ import {
   MatToolbarModule,
   MatGridListModule,
 } from '@angular/material';
+
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { DialogComponent } from './components/dialog/dialog.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -37,6 +39,7 @@ import { MainComponent } from './root/main/main.component';
     MatToolbarModule,
     MatGridListModule,
     AppRoutingModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [MainComponent],
