@@ -4,12 +4,11 @@ import { DialogComponent } from '../../components/dialog/dialog.component'
 import { MatDialog, MatDialogConfig } from '@angular/material'
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-provisioning-page',
+  templateUrl: './provisioning-page.component.html',
+  styleUrls: ['./provisioning-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
-
+export class ProvisioningPageComponent implements OnInit {
 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
@@ -19,14 +18,7 @@ export class HomePageComponent implements OnInit {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-
   ngOnInit() {
-    this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
-  }
-
-  // handle the model dialog
-  onSubmit(submission) {
-    console.log(submission);
   }
 
   openModal() {
@@ -44,12 +36,5 @@ export class HomePageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       alert("response: " + result)
     });
-  }
-
-  matVersion: string = '5.1.0';
-  breakpoint: number;
-  
-  onResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
   }
 }
