@@ -1,15 +1,4 @@
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    background-color: lightslategray;
-    color: white;
-    text-align: center;
-    margin: 0px;
-}
-
-.example-container {
+.vmware-container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -19,23 +8,28 @@
     right: 0;
 }
 
-.example-is-mobile .example-toolbar {
+.example-is-mobile .vmware-toolbar {
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
     z-index: 2;
 }
 
-h1.example-app-name {
-    margin-left: 8px;
+.vmware-header {
+    background-color: #00364d;
+    color: #fafafa;
 }
 
-.example-sidenav-container {
+h1.vmware-app-name {
+    margin-left: 50px;
+}
+
+.vmware-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
 }
 
-.example-is-mobile .example-sidenav-container {
+.example-is-mobile .vmware-sidenav-container {
     /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
@@ -46,20 +40,15 @@ h1.example-app-name {
     background-color: #fafafa;
 }
 
-.example-card {
+.vmware-card {
     max-width: 400px;
 }
 
-.example-header-image {
+.vmware-header-image {
     background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
     background-size: cover;
 }
 
 .card-padding {
     padding: 10px 5px 10px;
-}
-
-.header-customized {
-    background-color: #00364d;
-    color: #fafafa;
 }
