@@ -1,12 +1,14 @@
 {
     "type": "form",
     "display": "form",
+    "os": "ubuntu",
+    "image": "https://material.angular.io/assets/img/examples/shiba1.jpg",
     "components": [
         {
             "type": "email",
             "placeholder": "Enter your email address",
             "key": "email",
-            "label": "Email",
+            "label": "Email 12",
             "inputType": "email",
             "input": true,
             "validate": {

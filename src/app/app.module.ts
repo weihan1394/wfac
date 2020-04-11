@@ -19,6 +19,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './root/main/main.component';
+import { ProvisioningPageComponent } from './pages/provisioning-page/provisioning-page.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MainComponent } from './root/main/main.component';
     HomePageComponent,
     AboutPageComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    ProvisioningPageComponent
   ],
   imports: [
     BrowserModule,
