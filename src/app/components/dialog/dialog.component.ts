@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import * as ubuntu from '../../../assets/ubuntu.json';
 
 @Component({
   selector: 'app-dialog',

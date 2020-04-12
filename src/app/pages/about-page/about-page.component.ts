@@ -1,6 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import ubuntu from '../../../assets/ubuntu.json';
+import ubuntu from '../../../assets/provisioning/ubuntu.json';
 
 @Component({
   selector: 'app-about-page',

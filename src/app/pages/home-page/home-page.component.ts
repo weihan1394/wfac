@@ -10,8 +10,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material'
 })
 export class HomePageComponent implements OnInit {
 
-
   mobileQuery: MediaQueryList;
+  breakpoint: number;
+
   private _mobileQueryListener: () => void;
   constructor(public dialog: MatDialog, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -19,16 +20,16 @@ export class HomePageComponent implements OnInit {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-
   ngOnInit() {
     this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
   }
 
-  // handle the model dialog
+  // formio console
   onSubmit(submission) {
     console.log(submission);
   }
 
+  // open modal
   openModal() {
     const dialogConfig = new MatDialogConfig();
 
@@ -45,9 +46,6 @@ export class HomePageComponent implements OnInit {
       alert("response: " + result)
     });
   }
-
-  matVersion: string = '5.1.0';
-  breakpoint: number;
   
   onResize(event) {
     this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;

@@ -20,7 +20,7 @@
 }
 
 h1.vmware-app-name {
-    margin-left: 50px;
+    margin-left: 10px;
 }
 
 .vmware-sidenav-container {
@@ -45,10 +45,14 @@ h1.vmware-app-name {
 }
 
 .vmware-header-image {
-    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    // background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
     background-size: cover;
 }
 
 .card-padding {
     padding: 10px 5px 10px;
+}
+
+.paginator {
+    background-color: white;
 }
