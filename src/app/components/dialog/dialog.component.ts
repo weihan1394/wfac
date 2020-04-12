@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
+import { Provisioning } from '../../models/provisioning';
 
 @Component({
   selector: 'app-dialog',
@@ -8,6 +9,7 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 })
 export class DialogComponent {
   modalTitle: string;
+  provisioning: Provisioning;
   customForm: any = {
     components: [
       {
@@ -86,6 +88,7 @@ export class DialogComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     this.modalTitle = data.title;
+    this.provisioning = data.provisioning;
     console.log(data);
   }
 

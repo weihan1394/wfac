@@ -5,6 +5,7 @@ export class Provisioning implements Deserializable {
     name: string;
     operatingSystem: string;
     info: string;
+    url: string;
 
     deserialize(input: any) {
         Object.assign(this, input);
