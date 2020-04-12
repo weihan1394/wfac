@@ -32,7 +32,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 card-padding" *ngFor="let provisioning of lsProvisioning | filter:searchText">
+                    <div class="col-lg-4 col-md-4 card-padding"
+                        *ngFor="let provisioning of obs | async | filter: searchText ">
                         <mat-card class="vmware-card">
                             <mat-card-header>
                                 <div mat-card-avatar class="vmware-header-image"
@@ -50,6 +51,11 @@
                                 <button mat-button (click)="openModal()">Apply</button>
                             </mat-card-actions>
                         </mat-card>
+                    </div>
+                </div>
+                <div class="row paginator">
+                    <div class="col-md-4 offset-md-8">
+                        <mat-paginator [pageSizeOptions]="[6, 12, 30]"></mat-paginator>
                     </div>
                 </div>
             </div>

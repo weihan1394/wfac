@@ -10,6 +10,7 @@ import {
   MatSidenavModule,
   MatToolbarModule,
   MatGridListModule,
+  MatPaginatorModule,
 } from '@angular/material';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -45,6 +46,7 @@ import { ProvisioningPageComponent } from './pages/provisioning-page/provisionin
     MatSidenavModule,
     MatToolbarModule,
     MatGridListModule,
+    MatPaginatorModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     Ng2SearchPipeModule
