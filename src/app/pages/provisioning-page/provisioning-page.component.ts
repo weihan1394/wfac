@@ -46,7 +46,8 @@ export class ProvisioningPageComponent implements OnInit {
   openModal(provisioning) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
+    dialogConfig.autoFocus = false;
+    dialogConfig.width = "75%";
     
     dialogConfig.data = {
       provisioning: provisioning,
@@ -55,9 +56,9 @@ export class ProvisioningPageComponent implements OnInit {
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(result => {
-      alert("response: " + result)
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   alert("response: " + result)
+    // });
   }
 
   // populate modal
