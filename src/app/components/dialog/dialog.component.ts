@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
+import { Provisioning } from '../../models/provisioning';
 
 @Component({
   selector: 'app-dialog',
@@ -7,7 +8,8 @@ import { MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  modalTitle: string;
+  provisioning: Provisioning;
+  url: string;
   customForm: any = {
     components: [
       {
@@ -85,7 +87,8 @@ export class DialogComponent {
   };
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    this.modalTitle = data.title;
+    this.provisioning = data.provisioning;
+    this.url = this.provisioning.url;
     console.log(data);
   }
 

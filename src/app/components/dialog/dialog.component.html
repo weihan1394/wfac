@@ -3,10 +3,10 @@
   <!-- Do you wish to continue previous shopping? -->
 
   <mat-card>
-    <!-- <mat-formio src="https://examples.form.io/example" (submit)="onSubmit($event)"></mat-formio> -->
+    <mat-formio src="{{ url }}" (submit)="onSubmit($event)"></mat-formio>
     <!-- <mat-formio [form]="form" (submit)="onSubmit($event)"></mat-formio> -->
-    <mat-formio [form]="customForm" (submit)="onSubmit($event)"></mat-formio>
-    <pre>{{ customForm | json }}</pre>
+    <!-- <mat-formio [form]="customForm" (submit)="onSubmit($event)"></mat-formio> -->
+    <!-- <pre>{{ customForm | json }}</pre> -->
   </mat-card>
 </mat-dialog-content>
 <mat-dialog-actions>

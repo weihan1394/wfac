@@ -24,7 +24,7 @@ export class ProvisioningPageComponent implements OnInit {
   }
 
   lsProvisioning = [];
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   obs: Observable<any>;
   dataSource: MatTableDataSource<Provisioning> = new MatTableDataSource<Provisioning>(this.lsProvisioning);
 
@@ -35,26 +35,22 @@ export class ProvisioningPageComponent implements OnInit {
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
     this.obs = this.dataSource.connect();
-
-    // this.changeDetectorRef.detectChanges();
-    // this.dataSource.paginator = this.paginator;
-    // this.obs = this.dataSource.connect();
   }
 
   ngOnDestroy() {
-    if (this.dataSource) { 
-      this.dataSource.disconnect(); 
+    if (this.dataSource) {
+      this.dataSource.disconnect();
     }
   }
 
-  openModal() {
+  openModal(provisioning) {
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    
     dialogConfig.data = {
-      id: 1,
-      title: 'Angular For Beginners'
+      provisioning: provisioning,
+      url: provisioning.url,
     };
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
@@ -72,6 +68,7 @@ export class ProvisioningPageComponent implements OnInit {
       provisioning.name = 'Ubuntu ' + index;
       provisioning.operatingSystem = "Linux";
       provisioning.info = 'info';
+      provisioning.url = 'https://api.jsonbin.io/b/5e92f44bcc62be4369c35e62';
 
       this.lsProvisioning.push(provisioning);
     }
