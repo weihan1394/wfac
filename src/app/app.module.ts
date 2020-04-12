@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormioModule } from 'angular-material-formio';
+import { FormsModule } from '@angular/forms';
 
 import {
   MatButtonModule,
@@ -34,6 +35,7 @@ import { ProvisioningPageComponent } from './pages/provisioning-page/provisionin
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatFormioModule,
     MatButtonModule,
     MatDialogModule,
