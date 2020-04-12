@@ -14,6 +14,9 @@ import {
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
+// search module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 import { DialogComponent } from './components/dialog/dialog.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
@@ -43,7 +46,8 @@ import { ProvisioningPageComponent } from './pages/provisioning-page/provisionin
     MatToolbarModule,
     MatGridListModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [MainComponent],

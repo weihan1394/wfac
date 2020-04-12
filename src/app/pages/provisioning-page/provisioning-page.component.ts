@@ -11,6 +11,7 @@ import { Provisioning } from '../../models/provisioning';
 })
 export class ProvisioningPageComponent implements OnInit {
 
+  searchText;
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   constructor(public dialog: MatDialog, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
@@ -47,7 +48,7 @@ export class ProvisioningPageComponent implements OnInit {
     for (let index = 0; index < 12; index++) {
       let provisioning = new Provisioning;
       provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
-      provisioning.name = 'Ubuntu';
+      provisioning.name = 'Ubuntu ' + index;
       provisioning.operatingSystem = "Linux";
       provisioning.info = 'info';
 
