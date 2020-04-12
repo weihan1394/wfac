@@ -45,13 +45,12 @@ export class ProvisioningPageComponent implements OnInit {
 
   openModal(provisioning) {
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    console.log(provisioning)
+    
     dialogConfig.data = {
       provisioning: provisioning,
-      title: 'Angular For Beginners'
+      url: provisioning.url,
     };
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);

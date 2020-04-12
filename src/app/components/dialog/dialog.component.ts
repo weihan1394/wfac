@@ -8,8 +8,8 @@ import { Provisioning } from '../../models/provisioning';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  modalTitle: string;
   provisioning: Provisioning;
+  url: string;
   customForm: any = {
     components: [
       {
@@ -87,8 +87,8 @@ export class DialogComponent {
   };
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    this.modalTitle = data.title;
     this.provisioning = data.provisioning;
+    this.url = this.provisioning.url;
     console.log(data);
   }
 
