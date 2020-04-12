@@ -3,8 +3,8 @@
 </button>
 <h2 mat-dialog-title>Application Form: {{provisioning.name}}</h2>
 <mat-dialog-content >
-    <mat-formio src="{{ url }}" (submit)="onSubmit($event)"></mat-formio>
+    <!-- <mat-formio src="{{ url }}" (submit)="onSubmit($event)"></mat-formio> -->
     <!-- <mat-formio [form]="form" (submit)="onSubmit($event)"></mat-formio> -->
-    <!-- <mat-formio [form]="customForm" (submit)="onSubmit($event)"></mat-formio> -->
+    <mat-formio [form]="provisioning.url" (submit)="onSubmit($event)"></mat-formio>
     <!-- <pre>{{ customForm | json }}</pre> -->
 </mat-dialog-content>
