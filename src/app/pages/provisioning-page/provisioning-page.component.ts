@@ -1,12 +1,17 @@
-import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import ubuntu from '../../../assets/provisioning/ubuntu.json';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  ViewChild
+  } from '@angular/core';
+import { DialogComponent } from '../../components/dialog/dialog.component';
+import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { DialogComponent } from '../../components/dialog/dialog.component'
-import { MatDialog, MatDialogConfig } from '@angular/material'
 import { Provisioning } from '../../models/provisioning';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
-import ubuntu from '../../../assets/provisioning/ubuntu.json';
 
 @Component({
   selector: 'app-provisioning-page',
@@ -44,6 +49,12 @@ export class ProvisioningPageComponent implements OnInit {
     }
   }
 
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
+
   openModal(provisioning) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
@@ -70,7 +81,7 @@ export class ProvisioningPageComponent implements OnInit {
       let provisioning = new Provisioning;
       provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
       provisioning.name = 'Ubuntu ' + index;
-      provisioning.operatingSystem = "Linux";
+      provisioning.operatingSystem = "Linux " + index;
       provisioning.info = 'info';
       provisioning.url = JSON.stringify(ubuntu);
 
