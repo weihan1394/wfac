@@ -4,8 +4,14 @@
             <mat-icon>menu</mat-icon>
         </button>
         <h1 class="vmware-app-name">VMware</h1>
-    </mat-toolbar>
 
+        <div class="spacer"></div>
+        <button mat-button [matMenuTriggerFor]="menu">User 1</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>Logout</button>
+        </mat-menu>
+    </mat-toolbar>
 
     <mat-sidenav-container class="vmware-sidenav-container">
         <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
@@ -26,14 +32,14 @@
                 <div class="row">
                     <div class="col-md-4 offset-md-8">
                         <div class="md-form">
-                            <input mdbInput type="text" id="form1" class="form-control" (keyup)="applyFilter($event.target.value)">
+                            <input mdbInput type="text" id="form1" class="form-control"
+                                (keyup)="applyFilter($event.target.value)">
                             <label for="Search" class="">Search application</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 card-padding"
-                        *ngFor="let provisioning of obs | async ">
+                    <div class="col-lg-4 col-md-4 card-padding" *ngFor="let provisioning of obs | async ">
                         <mat-card class="vmware-card">
                             <mat-card-header>
                                 <div mat-card-avatar class="vmware-header-image"

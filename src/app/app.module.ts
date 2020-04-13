@@ -13,6 +13,7 @@ import {
   MatGridListModule,
   MatPaginatorModule,
 } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -46,6 +47,7 @@ import { ProvisioningPageComponent } from './pages/provisioning-page/provisionin
     MatToolbarModule,
     MatGridListModule,
     MatPaginatorModule,
+    MatMenuModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
   ],
