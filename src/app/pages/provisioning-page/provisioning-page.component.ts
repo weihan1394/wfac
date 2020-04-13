@@ -22,7 +22,6 @@ export class ProvisioningPageComponent implements OnInit {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-    // this.generateTest();
   }
 
   lsProvisioning = [];
@@ -65,14 +64,15 @@ export class ProvisioningPageComponent implements OnInit {
 
   // populate modal
   generateTest() {
-    console.log(ubuntu);
+    // console.log(ubuntu);
+    console.log(JSON.stringify(ubuntu));
     for (let index = 0; index < 12; index++) {
       let provisioning = new Provisioning;
       provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
       provisioning.name = 'Ubuntu ' + index;
       provisioning.operatingSystem = "Linux";
       provisioning.info = 'info';
-      provisioning.url = ubuntu;
+      provisioning.url = JSON.stringify(ubuntu);
 
       this.lsProvisioning.push(provisioning);
     }
