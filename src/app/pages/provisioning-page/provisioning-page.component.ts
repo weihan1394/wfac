@@ -81,7 +81,7 @@ export class ProvisioningPageComponent implements OnInit {
       let provisioning = new Provisioning;
       provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
       provisioning.name = 'Ubuntu ' + index;
-      provisioning.operatingSystem = "Linux";
+      provisioning.operatingSystem = "Linux " + index;
       provisioning.info = 'info';
       provisioning.url = JSON.stringify(ubuntu);
 
