@@ -75,29 +75,16 @@ export class DialogComponent {
       }
     ]
   };
-  submission: any = {
-    data: {
-      firstName: 'Joe',
-      lastName: 'Smith',
-      email: 'joe@example.com',
-      favoriteColor: 'banana',
-      phoneNumber: '(123) 456-7890',
-      salary: 45000
-    }
-  };
+
+  test: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     this.provisioning = data.provisioning;
     this.url = this.provisioning.url;
-    console.log(data);
-  }
-
-  ngOnInit() {
-    console.log("start")
+    this.test = JSON.parse(this.provisioning.url);
   }
 
   onSubmit(submission) {
     console.log(submission);
   }
-
 }

@@ -1,10 +1,12 @@
-import { MediaMatcher } from '@angular/cdk/layout';
 import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { MediaMatcher } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { DialogComponent } from '../../components/dialog/dialog.component'
 import { MatDialog, MatDialogConfig } from '@angular/material'
 import { Provisioning } from '../../models/provisioning';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
+import ubuntu from '../../../assets/provisioning/ubuntu.json';
 
 @Component({
   selector: 'app-provisioning-page',
@@ -16,11 +18,10 @@ export class ProvisioningPageComponent implements OnInit {
   searchText;
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
-  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-    // this.generateTest();
   }
 
   lsProvisioning = [];
@@ -46,7 +47,8 @@ export class ProvisioningPageComponent implements OnInit {
   openModal(provisioning) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
+    dialogConfig.autoFocus = false;
+    dialogConfig.width = "75%";
     
     dialogConfig.data = {
       provisioning: provisioning,
@@ -55,20 +57,22 @@ export class ProvisioningPageComponent implements OnInit {
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(result => {
-      alert("response: " + result)
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   alert("response: " + result)
+    // });
   }
 
   // populate modal
   generateTest() {
+    // console.log(ubuntu);
+    console.log(JSON.stringify(ubuntu));
     for (let index = 0; index < 12; index++) {
       let provisioning = new Provisioning;
       provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
       provisioning.name = 'Ubuntu ' + index;
       provisioning.operatingSystem = "Linux";
       provisioning.info = 'info';
-      provisioning.url = 'https://api.jsonbin.io/b/5e92f44bcc62be4369c35e62';
+      provisioning.url = JSON.stringify(ubuntu);
 
       this.lsProvisioning.push(provisioning);
     }

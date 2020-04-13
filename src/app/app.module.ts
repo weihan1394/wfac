@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormioModule } from 'angular-material-formio';
 import { FormsModule } from '@angular/forms';
@@ -38,6 +39,7 @@ import { ProvisioningPageComponent } from './pages/provisioning-page/provisionin
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     MatFormioModule,
