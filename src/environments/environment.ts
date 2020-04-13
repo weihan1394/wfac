@@ -3,8 +3,8 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:9000/keycloak-auth-api/rest',
 
-  keycloakRealm: 'keycloak-auth',
-  keycloakClient: 'auth-client',
+  keycloakRealm: 'pso-seak',
+  keycloakClient: 'pso-seak-app',
   keycloakBaseUrl: 'http://localhost:9000/'
 };
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { environment } from '../../../environments/environment';
-import * as KeycloakJson from '../../../assets/keycloak.json';
+import KeycloakJson from '../../../assets/keycloak.json';
 
 declare var Keycloak: any;
 
@@ -15,7 +15,7 @@ export class KeycloakService {
      * Initialized keycloak client
      */
     static init(): Promise<any> {
-        let keycloakAuth: any = new Keycloak('../../../assets/keycloak.json');
+        let keycloakAuth: any = new Keycloak(KeycloakJson);
         KeycloakService.auth.loggedIn = false;
 
         return new Promise((resolve, reject) => {
