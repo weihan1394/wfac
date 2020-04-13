@@ -1,12 +1,17 @@
-import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import ubuntu from '../../../assets/provisioning/ubuntu.json';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  ViewChild
+  } from '@angular/core';
+import { DialogComponent } from '../../components/dialog/dialog.component';
+import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { DialogComponent } from '../../components/dialog/dialog.component'
-import { MatDialog, MatDialogConfig } from '@angular/material'
 import { Provisioning } from '../../models/provisioning';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
-import ubuntu from '../../../assets/provisioning/ubuntu.json';
 
 @Component({
   selector: 'app-provisioning-page',
