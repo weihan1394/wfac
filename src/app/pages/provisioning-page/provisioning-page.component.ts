@@ -44,6 +44,12 @@ export class ProvisioningPageComponent implements OnInit {
     }
   }
 
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
+
   openModal(provisioning) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;

@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-md-4 offset-md-8">
                         <div class="md-form">
-                            <input mdbInput type="text" id="form1" class="form-control" [(ngModel)]="searchText">
+                            <input mdbInput type="text" id="form1" class="form-control" (keyup)="applyFilter($event.target.value)">
                             <label for="Search" class="">Search application</label>
                         </div>
                     </div>
