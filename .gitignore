@@ -47,4 +47,5 @@ Thumbs.db
 
 # Docker Files (running)
 # provisioning/*
+provisioning/local/data/*
 !/provisioning/local/docker-compose.yml
