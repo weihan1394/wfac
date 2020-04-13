@@ -1,10 +1,16 @@
+export const environment = {
+  baseUrl: 'http://localhost:8080',
+  production: false,
+  apiUrl: 'http://localhost:9000/keycloak-auth-api/rest',
+
+  keycloakRealm: 'keycloak-auth',
+  keycloakClient: 'auth-client',
+  keycloakBaseUrl: 'http://localhost:9000/'
+};
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false
-};
 
 /*
  * For easier debugging in development mode, you can import the following file
