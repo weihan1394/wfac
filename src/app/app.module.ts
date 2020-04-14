@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormioModule } from 'angular-material-formio';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +13,7 @@ import {
   MatGridListModule,
   MatPaginatorModule,
 } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -23,6 +24,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './root/main/main.component';
 import { ProvisioningPageComponent } from './pages/provisioning-page/provisioning-page.component';
+
+// keycloak
+import { KeycloakService } from "./core/auth/keycloak.service";
+import { AuthGuardService } from "./core/guard/auth-guard.service";
+import { SecuredHttpInterceptor } from './core/interceptor/secured-http.interceptor';
+
+
 
 
 @NgModule({
@@ -46,10 +54,19 @@ import { ProvisioningPageComponent } from './pages/provisioning-page/provisionin
     MatToolbarModule,
     MatGridListModule,
     MatPaginatorModule,
+    MatMenuModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    KeycloakService,
+    AuthGuardService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SecuredHttpInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [MainComponent],
   entryComponents: [
     DialogComponent

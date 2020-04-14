@@ -1,0 +1,14 @@
+{
+  "realm": "pso-seak",
+  "clientId": "pso-seak-app",
+  "url": "http://localhost:9000/auth/",
+  "auth-server-url": "http://localhost:9000/auth/",
+  "ssl-required": "none",
+  "resource": "pso-seak-app",
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": "45e7ba2d-2a93-494e-b060-74185ea7e065"
+  },
+  "use-resource-role-mappings": true,
+  "confidential-port": 0
+}

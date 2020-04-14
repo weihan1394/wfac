@@ -4,7 +4,7 @@ import {
   Component,
   OnInit,
   ViewChild
-  } from '@angular/core';
+} from '@angular/core';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogConfig } from '@angular/material';
@@ -12,6 +12,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { Provisioning } from '../../models/provisioning';
+import { KeycloakService } from "../../core/auth/keycloak.service";
 
 @Component({
   selector: 'app-provisioning-page',
@@ -60,7 +61,7 @@ export class ProvisioningPageComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = false;
     dialogConfig.width = "75%";
-    
+
     dialogConfig.data = {
       provisioning: provisioning,
       url: provisioning.url,
@@ -76,7 +77,7 @@ export class ProvisioningPageComponent implements OnInit {
   // populate modal
   generateTest() {
     // console.log(ubuntu);
-    console.log(JSON.stringify(ubuntu));
+    // console.log(JSON.stringify(ubuntu));
     for (let index = 0; index < 12; index++) {
       let provisioning = new Provisioning;
       provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
@@ -87,5 +88,9 @@ export class ProvisioningPageComponent implements OnInit {
 
       this.lsProvisioning.push(provisioning);
     }
+  }
+
+  getKeycloakService() {
+    return KeycloakService
   }
 }
