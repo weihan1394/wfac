@@ -36,4 +36,7 @@ http://localhost:8080
 - [FormIO](https://github.com/formio/angular-material-formio) version 1.19.0
 - [Angular Material](https://material.angular.io/) version 8.2.3
 - [Material Design for Bootstrap](https://mdbootstrap.com/docs/angular/) version 8.10.1
-- [Keycloak](https://www.npmjs.com/package/keycloak-angular) version 3.4.1
+- [Keycloak](https://www.npmjs.com/package/keycloak-angular) version 9.0.3
+
+## Documentation
+- [keycloak-js](https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter) version 9.0.3
