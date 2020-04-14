@@ -76,7 +76,7 @@ export class ProvisioningPageComponent implements OnInit {
   // populate modal
   generateTest() {
     // console.log(ubuntu);
-    console.log(JSON.stringify(ubuntu));
+    // console.log(JSON.stringify(ubuntu));
     for (let index = 0; index < 12; index++) {
       let provisioning = new Provisioning;
       provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';

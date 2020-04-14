@@ -15,15 +15,9 @@ if (environment.production) {
 
 KeycloakService.init()
   .then(() => {
-    console.log("1");
-    const platform = platformBrowserDynamic();
-    console.log("2");
-    platform.bootstrapModule(AppModule);
-    console.log("3");
+    platformBrowserDynamic().bootstrapModule(AppModule);
   })
   .catch(function (error) {
-    console.log('err');
-    console.log(error)
-    console.log(JSON.stringify(error)); 
+    console.log(JSON.stringify(error));
     return;
   });
