@@ -21,10 +21,15 @@ export class KeycloakService {
         return new Promise((resolve, reject) => {
             keycloakAuth.init({ onLoad: 'check-sso' })
                 .success(() => {
+                    console.log("1");
                     KeycloakService.auth.loggedIn = true;
+                    console.log("2");
                     KeycloakService.auth.authz = keycloakAuth;
+                    console.log("3");
                     KeycloakService.auth.registerUrl = KeycloakService.auth.authz.createRegisterUrl();
+                    console.log("4");
                     KeycloakService.auth.logoutUrl = keycloakAuth.authServerUrl + "/realms/" + environment.keycloakRealm + "/protocol/openid-connect/logout?redirect_uri=" + environment.baseUrl + "/index.html";
+                    console.log("5");
 
                     resolve();
                 })
