@@ -15,8 +15,11 @@ export class KeycloakService {
      * Initialized keycloak client
      */
     static init(): Promise<any> {
+        console.log("0");
         let keycloakAuth: any = new Keycloak(KeycloakJson);
+        console.log("0.1");
         KeycloakService.auth.loggedIn = false;
+        console.log("0.2");
 
         return new Promise((resolve, reject) => {
             keycloakAuth.init({ onLoad: 'check-sso' })
