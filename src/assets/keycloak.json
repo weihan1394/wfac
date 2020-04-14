@@ -1,5 +1,6 @@
 {
   "realm": "pso-seak",
+  "clientId": "pso-seak-app",
   "auth-server-url": "http://localhost:9000/auth/",
   "ssl-required": "none",
   "resource": "pso-seak-app",
