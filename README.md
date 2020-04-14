@@ -1,11 +1,11 @@
 # Ang-Material
 PSO Trial Project v0.1-beta
 
-
 ## Pre-requisite
 - [Node](https://nodejs.org/en/download/releases/) version 12.16.1
-- [Docker](https://docs.docker.com/docker-for-windows/install/) *For windows
-- [Docker](https://docs.docker.com/docker-for-mac/install/) *For Mac
+- [Angular Cli](https://cli.angular.io/) version 8.2.1
+- [Docker](https://docs.docker.com/docker-for-windows/install/) - For windows
+- [Docker](https://docs.docker.com/docker-for-mac/install/) - For Mac
 
 ## Build
 - `ng build` to build the project  (build artifacts will be stored in the `dist/` directory) 
