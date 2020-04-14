@@ -8,7 +8,7 @@
         <div class="spacer"></div>
         <button mat-button [matMenuTriggerFor]="menu">User 1</button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Profile</button>
+            <button mat-menu-item (click)="getKeycloakService().getUserDetails()">Profile</button>
             <button mat-menu-item (click)="getKeycloakService().logout()">Logout</button>
         </mat-menu>
     </mat-toolbar>

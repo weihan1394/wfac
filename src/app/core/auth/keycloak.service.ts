@@ -116,4 +116,18 @@ export class KeycloakService {
     static createRegisterUrl() {
         return KeycloakService.auth.registerUrl;
     }
+
+    /**
+     * Returns keycloak user details
+    */
+    static getUserDetails() {
+        KeycloakService.auth.authz.loadUserProfile()
+            .then(function (profile) {
+                console.log(profile);
+                console.log(JSON.stringify(profile, null, "  "));
+            }).catch(function () {
+                console.log('Failed to load user profile');
+            });
+        // return KeycloakService.auth.loadUserProfile;
+    }
 }
