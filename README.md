@@ -31,6 +31,20 @@ npm start
 ```
 http://localhost:8080
 
+### Fake Rest API Server
+Install Server
+``` npm
+npm install -g json-server
+```
+Start Server
+``` sh
+json-server --watch src/assets/provisioning/sample.json --port 4000
+```
+Test
+```
+curl http://localhost:4000/provisioning
+```
+
 ## Version
 - [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0
 - [FormIO](https://github.com/formio/angular-material-formio) version 1.19.0

@@ -1,11 +1,10 @@
 import { Deserializable } from "./deserializable";
+import { ProvisioningItem } from './provisioning-item';
 
 export class Provisioning implements Deserializable {
-    icon: string;
-    name: string;
-    operatingSystem: string;
-    info: string;
-    url: string;
+
+    provisioning: ProvisioningItem[];
+    count: Number;
 
     deserialize(input: any) {
         Object.assign(this, input);

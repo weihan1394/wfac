@@ -82,11 +82,11 @@ export class ProvisioningPageComponent implements OnInit {
     // console.log(JSON.stringify(ubuntu));
     for (let index = 0; index < 12; index++) {
       let provisioning = new Provisioning;
-      provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
-      provisioning.name = 'Ubuntu ' + index;
-      provisioning.operatingSystem = "Linux " + index;
-      provisioning.info = 'info';
-      provisioning.url = JSON.stringify(ubuntu);
+      // provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
+      // provisioning.name = 'Ubuntu ' + index;
+      // provisioning.operatingSystem = "Linux " + index;
+      // provisioning.info = 'info';
+      // provisioning.url = JSON.stringify(ubuntu);
 
       this.lsProvisioning.push(provisioning);
     }

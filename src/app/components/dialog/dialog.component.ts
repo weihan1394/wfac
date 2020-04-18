@@ -80,8 +80,8 @@ export class DialogComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     this.provisioning = data.provisioning;
-    this.url = this.provisioning.url;
-    this.test = JSON.parse(this.provisioning.url);
+    // this.url = this.provisioning.url;
+    // this.test = JSON.parse(this.provisioning.url);
   }
 
   onSubmit(submission) {
