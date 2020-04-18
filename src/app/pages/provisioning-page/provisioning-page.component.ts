@@ -1,4 +1,3 @@
-import ubuntu from '../../../assets/provisioning/ubuntu.json';
 import {
   ChangeDetectorRef,
   Component,
@@ -10,9 +9,12 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { Provisioning } from '../../models/provisioning';
+import { Observable, from } from 'rxjs';
 import { KeycloakService } from "../../core/auth/keycloak.service";
+
+import { ProvisioningService } from '../../service/provisioning.service';
+import { Provisioning } from '../../models/provisioning';
+import { ProvisioningItem } from '../../models/provisioning-item';
 
 @Component({
   selector: 'app-provisioning-page',
@@ -25,7 +27,7 @@ export class ProvisioningPageComponent implements OnInit {
   mobileQuery: MediaQueryList;
   username: String;
   private _mobileQueryListener: () => void;
-  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient) {
+  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient, private provisioningService: ProvisioningService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -44,6 +46,20 @@ export class ProvisioningPageComponent implements OnInit {
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
     this.obs = this.dataSource.connect();
+
+    // get provisioning
+    this.provisioningService.getProvisioning().subscribe(
+      response => {
+
+        let t = new Provisioning;
+        t = response;
+
+        console.log(t);
+      }, error => {
+
+      }
+    )
+
   }
 
   ngOnDestroy() {
