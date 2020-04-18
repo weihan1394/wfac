@@ -23,6 +23,7 @@ export class ProvisioningPageComponent implements OnInit {
 
   searchText;
   mobileQuery: MediaQueryList;
+  username: String;
   private _mobileQueryListener: () => void;
   constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -38,6 +39,7 @@ export class ProvisioningPageComponent implements OnInit {
   ngOnInit() {
     this.generateTest();
 
+    this.username = sessionStorage.getItem('loggedUser');
     // prevent the error message ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked.
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;

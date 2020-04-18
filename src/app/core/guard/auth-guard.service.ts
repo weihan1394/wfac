@@ -21,8 +21,20 @@ export class AuthGuardService implements CanActivate, CanLoad {
      */
     checkLogin(url: string): boolean {
         if (KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated) {
-            return true;
+            // get the username
+            KeycloakService.getUserDetails().then(
+                userDetails => {
+                    // sessionStorage.setItem('loggedUser', data.Username);
+                    console.log(userDetails["username"]);
 
+                    // check if userDetails object has username
+                    if (userDetails.hasOwnProperty('username')) {
+                        sessionStorage.setItem('loggedUser', userDetails["username"]);
+                    }
+                }
+            );
+
+            return true;
         } else {
             KeycloakService.login();
             return false;
