@@ -120,14 +120,16 @@ export class KeycloakService {
     /**
      * Returns keycloak user details
     */
-    static getUserDetails() {
-        KeycloakService.auth.authz.loadUserProfile()
+    static getUserDetails(): Promise<object> {
+        return KeycloakService.auth.authz.loadUserProfile()
             .then(function (profile) {
-                console.log(profile);
-                console.log(JSON.stringify(profile, null, "  "));
+                // console.log(profile);
+                // console.log(JSON.stringify(profile, null, "  "));
+                return(profile);
             }).catch(function () {
-                console.log('Failed to load user profile');
+                // console.log('Failed to load user profile');
+                return('Failed to load user profile');
             });
-        // return KeycloakService.auth.loadUserProfile;
+        
     }
 }

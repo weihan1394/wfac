@@ -6,7 +6,7 @@
         <h1 class="vmware-app-name">VMware</h1>
 
         <div class="spacer"></div>
-        <button mat-button [matMenuTriggerFor]="menu">User 1</button>
+        <button mat-button [matMenuTriggerFor]="menu">{{username}}</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="getKeycloakService().getUserDetails()">Profile</button>
             <button mat-menu-item (click)="getKeycloakService().logout()">Logout</button>
