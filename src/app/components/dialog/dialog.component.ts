@@ -9,12 +9,9 @@ import { ProvisioningItem } from '../../models/provisioning-item';
 })
 export class DialogComponent {
   provisioningItem: ProvisioningItem;
-  test: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     this.provisioningItem = data.provisioning;
-    console.log(JSON.stringify(data.provisioning));
-    this.test = JSON.stringify(data.provisioning)
   }
 
   onSubmit(submission) {
