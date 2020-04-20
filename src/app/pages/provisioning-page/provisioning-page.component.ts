@@ -1,4 +1,3 @@
-import ubuntu from '../../../assets/provisioning/ubuntu.json';
 import {
   ChangeDetectorRef,
   Component,
@@ -10,9 +9,12 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { Provisioning } from '../../models/provisioning';
+import { Observable, from } from 'rxjs';
 import { KeycloakService } from "../../core/auth/keycloak.service";
+
+import { ProvisioningService } from '../../service/provisioning.service';
+import { Provisioning } from '../../models/provisioning';
+import { ProvisioningItem } from '../../models/provisioning-item';
 
 @Component({
   selector: 'app-provisioning-page',
@@ -25,21 +27,32 @@ export class ProvisioningPageComponent implements OnInit {
   mobileQuery: MediaQueryList;
   username: String;
   private _mobileQueryListener: () => void;
-  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient) {
+  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient, private provisioningService: ProvisioningService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-  lsProvisioning = [];
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   obs: Observable<any>;
-  dataSource: MatTableDataSource<Provisioning> = new MatTableDataSource<Provisioning>(this.lsProvisioning);
+  dataSource: MatTableDataSource<ProvisioningItem> = new MatTableDataSource<ProvisioningItem>();
+
+  // dataSource;
 
   ngOnInit() {
-    this.generateTest();
-
     this.username = sessionStorage.getItem('loggedUser');
+
+    // get provisioning
+    this.provisioningService.getProvisioning().subscribe(
+      response => {
+        let provisioningReader = new Provisioning;
+        // parse json to object
+        provisioningReader = response;
+        this.dataSource.data = provisioningReader.provisioning;
+      }, error => {
+      }
+    )
+
     // prevent the error message ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked.
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
@@ -77,20 +90,20 @@ export class ProvisioningPageComponent implements OnInit {
   }
 
   // populate modal
-  generateTest() {
-    // console.log(ubuntu);
-    // console.log(JSON.stringify(ubuntu));
-    for (let index = 0; index < 12; index++) {
-      let provisioning = new Provisioning;
-      provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
-      provisioning.name = 'Ubuntu ' + index;
-      provisioning.operatingSystem = "Linux " + index;
-      provisioning.info = 'info';
-      provisioning.url = JSON.stringify(ubuntu);
+  // generateTest() {
+  //   console.log(ubuntu);
+  //   console.log(JSON.stringify(ubuntu));
+  //   for (let index = 0; index < 12; index++) {
+  //     let provisioning = new Provisioning;
+  //     provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
+  //     provisioning.name = 'Ubuntu ' + index;
+  //     provisioning.operatingSystem = "Linux " + index;
+  //     provisioning.info = 'info';
+  //     provisioning.url = JSON.stringify(ubuntu);
 
-      this.lsProvisioning.push(provisioning);
-    }
-  }
+  //     this.lsProvisioning.push(provisioning);
+  //   }
+  // }
 
   getKeycloakService() {
     return KeycloakService

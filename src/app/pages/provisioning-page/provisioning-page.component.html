@@ -43,14 +43,14 @@
                         <mat-card class="vmware-card">
                             <mat-card-header>
                                 <div mat-card-avatar class="vmware-header-image"
-                                    [ngStyle]="{'background-image': 'url(' + provisioning.icon + ')'}">
+                                    [ngStyle]="{'background-image': 'url(' + provisioning.vm_icon + ')'}">
                                 </div>
-                                <mat-card-title>{{ provisioning.name }}</mat-card-title>
-                                <mat-card-subtitle>{{ provisioning.operatingSystem }}</mat-card-subtitle>
+                                <mat-card-title>{{ provisioning.vm_name }}</mat-card-title>
+                                <mat-card-subtitle>{{ provisioning.vm_os }}</mat-card-subtitle>
                             </mat-card-header>
                             <mat-card-content>
                                 <p>
-                                    {{ provisioning.info }}
+                                    {{ provisioning.vm_info }}
                                 </p>
                             </mat-card-content>
                             <mat-card-actions>
