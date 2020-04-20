@@ -1,243 +1,237 @@
 {
-    "provisioning-example": {
-        "provisioning": [
-            {
-                "id": 1,
-                "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-                "vm_name": "Ubuntu",
-                "vm_os": "linux",
-                "vm_info": "information here",
-                "type": "form",
-                "display": "form",
-                "components": [
-                    {
-                        "type": "email",
-                        "placeholder": "Enter your email address",
-                        "key": "email",
-                        "label": "Email 12",
-                        "inputType": "email",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "password",
-                        "placeholder": "Enter your password",
-                        "key": "password",
-                        "label": "Password",
-                        "inputType": "password",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "button",
-                        "theme": "primary",
-                        "disableOnInvalid": true,
-                        "action": "submit",
-                        "size": "md",
-                        "key": "submit",
-                        "label": "Submit",
-                        "input": true,
-                        "block": true,
-                        "row": ""
-                    }
-                ]
+  "provisioning-example": {
+    "provisioning": [
+      {
+        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+        "vm_name": "Ubuntu",
+        "vm_os": "linux",
+        "vm_info": "information here",
+        "type": "form",
+        "display": "form",
+        "components": [
+          {
+            "type": "email",
+            "placeholder": "Enter your email address",
+            "key": "email",
+            "label": "Email 12",
+            "inputType": "email",
+            "input": true,
+            "validate": {
+              "required": true
             },
-            {
-                "id": 2,
-                "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-                "vm_name": "Ubuntu",
-                "vm_os": "linux",
-                "vm_info": "information here",
-                "type": "form",
-                "display": "form",
-                "components": [
-                    {
-                        "type": "email",
-                        "placeholder": "Enter your email address",
-                        "key": "email",
-                        "label": "Email 12",
-                        "inputType": "email",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "password",
-                        "placeholder": "Enter your password",
-                        "key": "password",
-                        "label": "Password",
-                        "inputType": "password",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "button",
-                        "theme": "primary",
-                        "disableOnInvalid": true,
-                        "action": "submit",
-                        "size": "md",
-                        "key": "submit",
-                        "label": "Submit",
-                        "input": true,
-                        "block": true,
-                        "row": ""
-                    }
-                ]
+            "row": ""
+          },
+          {
+            "type": "password",
+            "placeholder": "Enter your password",
+            "key": "password",
+            "label": "Password",
+            "inputType": "password",
+            "input": true,
+            "validate": {
+              "required": true
             },
-            {
-                "id": 3,
-                "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-                "vm_name": "Ubuntu",
-                "vm_os": "linux",
-                "vm_info": "information here",
-                "type": "form",
-                "display": "form",
-                "components": [
-                    {
-                        "type": "email",
-                        "placeholder": "Enter your email address",
-                        "key": "email",
-                        "label": "Email 12",
-                        "inputType": "email",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "password",
-                        "placeholder": "Enter your password",
-                        "key": "password",
-                        "label": "Password",
-                        "inputType": "password",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "button",
-                        "theme": "primary",
-                        "disableOnInvalid": true,
-                        "action": "submit",
-                        "size": "md",
-                        "key": "submit",
-                        "label": "Submit",
-                        "input": true,
-                        "block": true,
-                        "row": ""
-                    }
-                ]
+            "row": ""
+          },
+          {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": true,
+            "action": "submit",
+            "size": "md",
+            "key": "submit",
+            "label": "Submit",
+            "input": true,
+            "block": true,
+            "row": ""
+          }
+        ]
+      },
+      {
+        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+        "vm_name": "Ubuntu",
+        "vm_os": "linux",
+        "vm_info": "information here",
+        "type": "form",
+        "display": "form",
+        "components": [
+          {
+            "type": "email",
+            "placeholder": "Enter your email address",
+            "key": "email",
+            "label": "Email 12",
+            "inputType": "email",
+            "input": true,
+            "validate": {
+              "required": true
             },
-            {
-                "id": 4,
-                "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-                "vm_name": "Ubuntu",
-                "vm_os": "linux",
-                "vm_info": "information here",
-                "type": "form",
-                "display": "form",
-                "components": [
-                    {
-                        "type": "email",
-                        "placeholder": "Enter your email address",
-                        "key": "email",
-                        "label": "Email 12",
-                        "inputType": "email",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "password",
-                        "placeholder": "Enter your password",
-                        "key": "password",
-                        "label": "Password",
-                        "inputType": "password",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "button",
-                        "theme": "primary",
-                        "disableOnInvalid": true,
-                        "action": "submit",
-                        "size": "md",
-                        "key": "submit",
-                        "label": "Submit",
-                        "input": true,
-                        "block": true,
-                        "row": ""
-                    }
-                ]
+            "row": ""
+          },
+          {
+            "type": "password",
+            "placeholder": "Enter your password",
+            "key": "password",
+            "label": "Password",
+            "inputType": "password",
+            "input": true,
+            "validate": {
+              "required": true
             },
-            {
-                "id": 5,
-                "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-                "vm_name": "Ubuntu",
-                "vm_os": "linux",
-                "vm_info": "information here",
-                "type": "form",
-                "display": "form",
-                "components": [
-                    {
-                        "type": "email",
-                        "placeholder": "Enter your email address",
-                        "key": "email",
-                        "label": "Email 12",
-                        "inputType": "email",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "password",
-                        "placeholder": "Enter your password",
-                        "key": "password",
-                        "label": "Password",
-                        "inputType": "password",
-                        "input": true,
-                        "validate": {
-                            "required": true
-                        },
-                        "row": ""
-                    },
-                    {
-                        "type": "button",
-                        "theme": "primary",
-                        "disableOnInvalid": true,
-                        "action": "submit",
-                        "size": "md",
-                        "key": "submit",
-                        "label": "Submit",
-                        "input": true,
-                        "block": true,
-                        "row": ""
-                    }
-                ]
-            }
-        ],
-        "count": 5
-    }
-    
+            "row": ""
+          },
+          {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": true,
+            "action": "submit",
+            "size": "md",
+            "key": "submit",
+            "label": "Submit",
+            "input": true,
+            "block": true,
+            "row": ""
+          }
+        ]
+      },
+      {
+        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+        "vm_name": "Ubuntu",
+        "vm_os": "linux",
+        "vm_info": "information here",
+        "type": "form",
+        "display": "form",
+        "components": [
+          {
+            "type": "email",
+            "placeholder": "Enter your email address",
+            "key": "email",
+            "label": "Email 12",
+            "inputType": "email",
+            "input": true,
+            "validate": {
+              "required": true
+            },
+            "row": ""
+          },
+          {
+            "type": "password",
+            "placeholder": "Enter your password",
+            "key": "password",
+            "label": "Password",
+            "inputType": "password",
+            "input": true,
+            "validate": {
+              "required": true
+            },
+            "row": ""
+          },
+          {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": true,
+            "action": "submit",
+            "size": "md",
+            "key": "submit",
+            "label": "Submit",
+            "input": true,
+            "block": true,
+            "row": ""
+          }
+        ]
+      },
+      {
+        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+        "vm_name": "Ubuntu",
+        "vm_os": "linux",
+        "vm_info": "information here",
+        "type": "form",
+        "display": "form",
+        "components": [
+          {
+            "type": "email",
+            "placeholder": "Enter your email address",
+            "key": "email",
+            "label": "Email 12",
+            "inputType": "email",
+            "input": true,
+            "validate": {
+              "required": true
+            },
+            "row": ""
+          },
+          {
+            "type": "password",
+            "placeholder": "Enter your password",
+            "key": "password",
+            "label": "Password",
+            "inputType": "password",
+            "input": true,
+            "validate": {
+              "required": true
+            },
+            "row": ""
+          },
+          {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": true,
+            "action": "submit",
+            "size": "md",
+            "key": "submit",
+            "label": "Submit",
+            "input": true,
+            "block": true,
+            "row": ""
+          }
+        ]
+      },
+      {
+        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+        "vm_name": "Ubuntu",
+        "vm_os": "linux",
+        "vm_info": "information here",
+        "type": "form",
+        "display": "form",
+        "components": [
+          {
+            "type": "email",
+            "placeholder": "Enter your email address",
+            "key": "email",
+            "label": "Email 12",
+            "inputType": "email",
+            "input": true,
+            "validate": {
+              "required": true
+            },
+            "row": ""
+          },
+          {
+            "type": "password",
+            "placeholder": "Enter your password",
+            "key": "password",
+            "label": "Password",
+            "inputType": "password",
+            "input": true,
+            "validate": {
+              "required": true
+            },
+            "row": ""
+          },
+          {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": true,
+            "action": "submit",
+            "size": "md",
+            "key": "submit",
+            "label": "Submit",
+            "input": true,
+            "block": true,
+            "row": ""
+          }
+        ]
+      }
+    ],
+    "count": 5
+  }
 }

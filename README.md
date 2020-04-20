@@ -38,12 +38,14 @@ npm install -g json-server
 ```
 Start Server
 ``` sh
-json-server --watch src/assets/provisioning/sample.json --port 4000
+cd json_server
+json-server example/provisioning.json
 ```
 Test
 ```
 curl http://localhost:4000/provisioning
 ```
+Configuration file 
 
 ## Version
 - [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0

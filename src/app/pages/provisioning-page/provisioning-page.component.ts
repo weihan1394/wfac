@@ -33,33 +33,30 @@ export class ProvisioningPageComponent implements OnInit {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-  lsProvisioning = [];
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   obs: Observable<any>;
-  dataSource: MatTableDataSource<Provisioning> = new MatTableDataSource<Provisioning>(this.lsProvisioning);
+  dataSource: MatTableDataSource<ProvisioningItem> = new MatTableDataSource<ProvisioningItem>();
+
+  // dataSource;
 
   ngOnInit() {
-    this.generateTest();
-
     this.username = sessionStorage.getItem('loggedUser');
-    // prevent the error message ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked.
-    this.changeDetectorRef.detectChanges();
-    this.dataSource.paginator = this.paginator;
-    this.obs = this.dataSource.connect();
 
     // get provisioning
     this.provisioningService.getProvisioning().subscribe(
       response => {
-
-        let t = new Provisioning;
-        t = response;
-
-        console.log(t);
+        let provisioningReader = new Provisioning;
+        // parse json to object
+        provisioningReader = response;
+        this.dataSource.data = provisioningReader.provisioning;
       }, error => {
-
       }
     )
 
+    // prevent the error message ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked.
+    this.changeDetectorRef.detectChanges();
+    this.dataSource.paginator = this.paginator;
+    this.obs = this.dataSource.connect();
   }
 
   ngOnDestroy() {
@@ -93,20 +90,20 @@ export class ProvisioningPageComponent implements OnInit {
   }
 
   // populate modal
-  generateTest() {
-    // console.log(ubuntu);
-    // console.log(JSON.stringify(ubuntu));
-    for (let index = 0; index < 12; index++) {
-      let provisioning = new Provisioning;
-      // provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
-      // provisioning.name = 'Ubuntu ' + index;
-      // provisioning.operatingSystem = "Linux " + index;
-      // provisioning.info = 'info';
-      // provisioning.url = JSON.stringify(ubuntu);
+  // generateTest() {
+  //   console.log(ubuntu);
+  //   console.log(JSON.stringify(ubuntu));
+  //   for (let index = 0; index < 12; index++) {
+  //     let provisioning = new Provisioning;
+  //     provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
+  //     provisioning.name = 'Ubuntu ' + index;
+  //     provisioning.operatingSystem = "Linux " + index;
+  //     provisioning.info = 'info';
+  //     provisioning.url = JSON.stringify(ubuntu);
 
-      this.lsProvisioning.push(provisioning);
-    }
-  }
+  //     this.lsProvisioning.push(provisioning);
+  //   }
+  // }
 
   getKeycloakService() {
     return KeycloakService
