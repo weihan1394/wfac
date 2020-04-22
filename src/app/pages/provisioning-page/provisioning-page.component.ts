@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs';
 import { KeycloakService } from "../../core/auth/keycloak.service";
 
 import { ProvisioningService } from '../../service/provisioning.service';
@@ -83,27 +83,7 @@ export class ProvisioningPageComponent implements OnInit {
     };
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   alert("response: " + result)
-    // });
   }
-
-  // populate modal
-  // generateTest() {
-  //   console.log(ubuntu);
-  //   console.log(JSON.stringify(ubuntu));
-  //   for (let index = 0; index < 12; index++) {
-  //     let provisioning = new Provisioning;
-  //     provisioning.icon = 'https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png';
-  //     provisioning.name = 'Ubuntu ' + index;
-  //     provisioning.operatingSystem = "Linux " + index;
-  //     provisioning.info = 'info';
-  //     provisioning.url = JSON.stringify(ubuntu);
-
-  //     this.lsProvisioning.push(provisioning);
-  //   }
-  // }
 
   getKeycloakService() {
     return KeycloakService
