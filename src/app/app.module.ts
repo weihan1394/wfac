@@ -18,12 +18,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { DialogComponent } from './components/dialog/dialog.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './root/main/main.component';
 import { ProvisioningPageComponent } from './pages/provisioning-page/provisioning-page.component';
+import { RequestPageComponent } from './pages/request-page/request-page.component';
+import { InventoryPageComponent } from './pages/inventory-page/inventory-page.component';
 
 // keycloak
 import { KeycloakService } from "./core/auth/keycloak.service";
@@ -36,11 +36,11 @@ import { SecuredHttpInterceptor } from './core/interceptor/secured-http.intercep
 @NgModule({
   declarations: [
     DialogComponent,
-    HomePageComponent,
-    AboutPageComponent,
     FooterComponent,
     MainComponent,
-    ProvisioningPageComponent
+    ProvisioningPageComponent,
+    RequestPageComponent,
+    InventoryPageComponent
   ],
   imports: [
     BrowserModule,

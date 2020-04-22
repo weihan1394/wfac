@@ -2,9 +2,55 @@
   "provisioning-example": {
     "provisioning": [
       {
-        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-        "vm_name": "Ubuntu",
-        "vm_os": "linux",
+        "vm_icon": "https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png",
+        "vm_name": "Ubuntu 1",
+        "vm_os": "Linux",
+        "vm_info": "the information is here",
+        "type": "form",
+        "display": "form",
+        "components": [
+          {
+            "type": "email",
+            "placeholder": "Enter your email address",
+            "key": "email",
+            "label": "Email 12",
+            "inputType": "email",
+            "input": true,
+            "validate": {
+              "required": true
+            },
+            "row": ""
+          },
+          {
+            "type": "password",
+            "placeholder": "Enter your password",
+            "key": "password",
+            "label": "Password",
+            "inputType": "password",
+            "input": true,
+            "validate": {
+              "required": true
+            },
+            "row": ""
+          },
+          {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": true,
+            "action": "submit",
+            "size": "md",
+            "key": "submit",
+            "label": "Submit",
+            "input": true,
+            "block": true,
+            "row": ""
+          }
+        ]
+      },
+      {
+        "vm_icon": "https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png",
+        "vm_name": "Ubuntu 2",
+        "vm_os": "Linux",
         "vm_info": "information here",
         "type": "form",
         "display": "form",
@@ -48,9 +94,9 @@
         ]
       },
       {
-        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-        "vm_name": "Ubuntu",
-        "vm_os": "linux",
+        "vm_icon": "https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png",
+        "vm_name": "Ubuntu 3",
+        "vm_os": "Linux",
         "vm_info": "information here",
         "type": "form",
         "display": "form",
@@ -94,9 +140,9 @@
         ]
       },
       {
-        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-        "vm_name": "Ubuntu",
-        "vm_os": "linux",
+        "vm_icon": "https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png",
+        "vm_name": "Ubuntu 4",
+        "vm_os": "Linux",
         "vm_info": "information here",
         "type": "form",
         "display": "form",
@@ -140,55 +186,9 @@
         ]
       },
       {
-        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-        "vm_name": "Ubuntu",
-        "vm_os": "linux",
-        "vm_info": "information here",
-        "type": "form",
-        "display": "form",
-        "components": [
-          {
-            "type": "email",
-            "placeholder": "Enter your email address",
-            "key": "email",
-            "label": "Email 12",
-            "inputType": "email",
-            "input": true,
-            "validate": {
-              "required": true
-            },
-            "row": ""
-          },
-          {
-            "type": "password",
-            "placeholder": "Enter your password",
-            "key": "password",
-            "label": "Password",
-            "inputType": "password",
-            "input": true,
-            "validate": {
-              "required": true
-            },
-            "row": ""
-          },
-          {
-            "type": "button",
-            "theme": "primary",
-            "disableOnInvalid": true,
-            "action": "submit",
-            "size": "md",
-            "key": "submit",
-            "label": "Submit",
-            "input": true,
-            "block": true,
-            "row": ""
-          }
-        ]
-      },
-      {
-        "vm_icon": "https://material.angular.io/assets/img/examples/shiba1.jpg",
-        "vm_name": "Ubuntu",
-        "vm_os": "linux",
+        "vm_icon": "https://cdn0.iconfinder.com/data/icons/flat-round-system/512/ubuntu-512.png",
+        "vm_name": "Ubuntu 5",
+        "vm_os": "Linux",
         "vm_info": "information here",
         "type": "form",
         "display": "form",

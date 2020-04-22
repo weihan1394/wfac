@@ -49,7 +49,7 @@
                                 <mat-card-subtitle>{{ provisioning.vm_os }}</mat-card-subtitle>
                             </mat-card-header>
                             <mat-card-content>
-                                <p>
+                                <p style="height: 50px;">
                                     {{ provisioning.vm_info }}
                                 </p>
                             </mat-card-content>
@@ -59,7 +59,7 @@
                         </mat-card>
                     </div>
                 </div>
-                <div class="row paginator">
+                <div class="row paginator" style="background-color: #fafafa;">
                     <div class="col-md-4 offset-md-8">
                         <mat-paginator [pageSizeOptions]="[6, 12, 30]"></mat-paginator>
                     </div>
