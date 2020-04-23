@@ -34,6 +34,36 @@
             "row": ""
           },
           {
+            "type": "select",
+            "label": "Single Select",
+            "key": "single",
+            "placeholder": "Select one",
+            "data": {
+              "values": [
+                {
+                  "value": "apple",
+                  "label": "Apple"
+                },
+                {
+                  "value": "banana",
+                  "label": "Banana"
+                },
+                {
+                  "value": "pear",
+                  "label": "Pear"
+                },
+                {
+                  "value": "orange",
+                  "label": "Orange"
+                }
+              ]
+            },
+            "dataSrc": "values",
+            "defaultValue": "banana",
+            "template": "<span>{{ item.label }}</span>",
+            "input": true
+          },
+          {
             "type": "button",
             "theme": "primary",
             "disableOnInvalid": true,
