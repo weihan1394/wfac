@@ -21,14 +21,13 @@ RUN ls
 RUN ng build --output-path=dist
 
 
-
 ############
 ### prod ###
 ############
 # base image
 FROM nginx:1.18.0-alpine
 
-## remove default nginx website
+# overwrite default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 COPY ./provisioning/conf /usr/share/nginx/html
 
