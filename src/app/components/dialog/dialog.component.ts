@@ -15,6 +15,6 @@ export class DialogComponent {
   }
 
   onSubmit(submission) {
-    console.log(submission);
+    console.log(submission.data);
   }
 }

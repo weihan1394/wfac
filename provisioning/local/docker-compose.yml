@@ -35,6 +35,15 @@ services:
       - 9000:8080
     depends_on:
       - postgres
+  ang-mat:
+    container_name: ang-mat
+    image: ang-material:v0.1.0
+    ports:
+      - 8080:80
+    # volumes: 
+    #   - ./data/app
+  
+  
 
 networks:
   keycloak-network:
