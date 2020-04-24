@@ -20,11 +20,17 @@ COPY . .
 RUN ls
 RUN ng build --output-path=dist
 
+
+
 ############
 ### prod ###
 ############
 # base image
-FROM nginx:1.16.0-alpine
+FROM nginx:1.18.0-alpine
+
+## remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+COPY ./provisioning/conf /usr/share/nginx/html
 
 # copy artifact build from the 'build environment'
 COPY --from=build /app/dist /usr/share/nginx/html
