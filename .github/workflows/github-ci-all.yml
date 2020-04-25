@@ -17,7 +17,7 @@ jobs:
 
       - name: Build
         run: |
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME:v0.1.0
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/ang-material:v0.1.0
           docker build -t $IMAGE_ID .
       
       - name: Log into registry
