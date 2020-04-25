@@ -17,7 +17,6 @@ RUN npm install -g @angular/cli@8.3.22
 COPY . .
 
 # generate build
-RUN ls
 RUN ng build --output-path=dist
 
 
