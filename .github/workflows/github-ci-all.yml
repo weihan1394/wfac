@@ -2,7 +2,9 @@ name: ang-material
 
 # trigger the workflow when someone pushes the code to repo
 on:
-  push    # matches every branch
+  push
+    # branches:
+    #   - '*'         # matches every branch
 
 jobs:
   # Run tests.
@@ -36,11 +38,11 @@ jobs:
           # Use Docker `latest` tag convention
           [ "$VERSION" == "master" ] && VERSION=latest
 
-          echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
+          # echo IMAGE_ID=$IMAGE_ID
+          # echo VERSION=$VERSION
 
-          docker tag image $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
+          # docker tag image $IMAGE_ID:$VERSION
+          docker push ang-material:v0.1.0
 
 
   # # Push image to GitHub Packages.
