@@ -2,9 +2,7 @@ name: ang-material
 
 # trigger the workflow when someone pushes the code to repo
 on:
-  push:
-    branches:
-      - '*'         # matches every branch
+  push    # matches every branch
 
 jobs:
   # Run tests.
