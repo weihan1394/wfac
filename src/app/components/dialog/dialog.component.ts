@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ProvisioningItem } from '../../models/provisioning-item';
 
 @Component({
@@ -10,11 +10,12 @@ import { ProvisioningItem } from '../../models/provisioning-item';
 export class DialogComponent {
   provisioningItem: ProvisioningItem;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.provisioningItem = data.provisioning;
   }
 
   onSubmit(submission) {
     console.log(submission.data);
+    this.dialogRef.close();
   }
 }
