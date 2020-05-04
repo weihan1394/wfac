@@ -30,8 +30,8 @@ import { KeycloakService } from "./core/auth/keycloak.service";
 import { AuthGuardService } from "./core/guard/auth-guard.service";
 import { SecuredHttpInterceptor } from './core/interceptor/secured-http.interceptor';
 
-
-
+// ngx-toastr
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -57,6 +57,7 @@ import { SecuredHttpInterceptor } from './core/interceptor/secured-http.intercep
     MatMenuModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [
     KeycloakService,
