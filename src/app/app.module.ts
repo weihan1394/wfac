@@ -33,6 +33,9 @@ import { SecuredHttpInterceptor } from './core/interceptor/secured-http.intercep
 // ngx-toastr
 import { ToastrModule } from 'ngx-toastr';
 
+// spinner
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 @NgModule({
   declarations: [
     DialogComponent,
@@ -57,7 +60,8 @@ import { ToastrModule } from 'ngx-toastr';
     MatMenuModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added
+    NgxSpinnerModule
   ],
   providers: [
     KeycloakService,
