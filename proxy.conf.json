@@ -5,5 +5,12 @@
     "pathRewrite": {
       "^/api": ""
     }
+  },
+  "/api2": {
+    "target": "http://localhost:4001",
+    "secure": false,
+    "pathRewrite": {
+      "^/api2": ""
+    }
   }
 }
