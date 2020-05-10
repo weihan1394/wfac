@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .vmware-container {
     display: flex;
@@ -48,4 +54,37 @@ h1.vmware-app-name {
 
 .spacer {
     flex-grow: 1;
+}
+
+.sidenav-icon {
+    margin-right: 10px;
+}
+
+.toast-top-right {
+    top: 75px;
+    right: 12px;
+}
+
+@media (max-width: 575.98px) {
+    .toast-top-right {
+        top: unset;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    .toast-container.toast-top-right .toast {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#toast-container .toast.toast-info {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=") !important;
+}
+
+/* this will set the toastr style */
+.toast-custom {
+    background-color: #005478;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAQAAAD8x0bcAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAAd0SU1FB+QFBhMRKNSGtVsAAACHelRYdFJhdyBwcm9maWxlIHR5cGUgZXhpZgAAGNNdjVEOgCAMQ/93Co/QjTHlOBgx8QYeX2CagP1p2nRvVO7rpKWJxUjjulkyQ5UeegCS4dpaBeaW49uxWyi138ee3NXA0g7DcCCdtlrqwAmkBZMSaB4kDDnk14eu77I/meAVJJp9/PsqXwY92ew1OyDtx8sAAADnSURBVCjPrdGxSkMxFMbxL2npUFxd3dTFZxKko8/g7muIuDhJFwUXfQk7OwsugtaC9+fQ297eUjcTCEnO/3wnJ1/yX6PsvtZDyp9AySBNmp1KuvQmZXlRl4FuJklqZJyLHEdK2UAGBu2uqoopZg5FzTqwWosqrvCBczFcKhUxMRFDRXWNT9yIKKv8CTgVcdsi94aidC96wBxnLvGFO6O2dJKl0oEXLDQac0wNVkjbcYvNsPCNJ+N1M70PiCOv4NFeD9nCTrx5NtpGyoYVNU3285P31L5npedYTZO6kuhsLV3R9XkLSX4BhY/dS+Bf6ygAAAB4ZXhJZk1NACoAAAAIAAQBGgAFAAAAAQAAAD4BGwAFAAAAAQAAAEYBKAADAAAAAQACAACHaQAEAAAAAQAAAE4AAAAAAAAAkAAAAAEAAACQAAAAAQADoAEAAwAAAAEAAQAAoAIABAAAAAEAAAAkoAMABAAAAAEAAAAkAAAAAHFN7uIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDUtMDZUMTk6MTc6NDAtMDc6MDCXi3jVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA1LTA2VDE5OjE3OjQwLTA3OjAw5tbAaQAAABF0RVh0ZXhpZjpDb2xvclNwYWNlADEPmwJJAAAAF3RFWHRleGlmOkV4aWZJbWFnZUxlbmd0aAAzNmOfy7UAAAAWdEVYdGV4aWY6RXhpZkltYWdlV2lkdGgAMzYubXYwAAAAEnRFWHRleGlmOkV4aWZPZmZzZXQANzjJ1HsnAAAAAElFTkSuQmCC) !important;
 }

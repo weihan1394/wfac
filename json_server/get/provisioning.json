@@ -86,15 +86,12 @@
         "display": "form",
         "components": [
           {
-            "type": "email",
+            "type": "textfield",
             "placeholder": "Enter your email address",
             "key": "email",
             "label": "Email 12",
-            "inputType": "email",
+            "inputType": "text",
             "input": true,
-            "validate": {
-              "required": true
-            },
             "row": ""
           },
           {
@@ -104,9 +101,6 @@
             "label": "Password",
             "inputType": "password",
             "input": true,
-            "validate": {
-              "required": true
-            },
             "row": ""
           },
           {

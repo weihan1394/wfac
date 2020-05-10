@@ -22,6 +22,13 @@ export class ProvisioningService {
       )
   }
 
+  sendProvisioning(result: any): Observable<any> {
+    return this.httpClient.post<any>('/api2/provisioning-example', result, httpOptions).pipe
+      (
+        catchError(this.handleError)
+      )
+  }
+
   private handleError(error: HttpErrorResponse) {
     let errorMessage: string = "";
 

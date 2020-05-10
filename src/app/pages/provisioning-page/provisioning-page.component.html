@@ -18,9 +18,24 @@
     <mat-sidenav-container class="vmware-sidenav-container">
         <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
             <mat-nav-list>
-                <a mat-list-item routerLink='/provisioning'><b>Provisioning</b></a>
-                <a mat-list-item routerLink='/request'>Request</a>
-                <a mat-list-item routerLink='/inventory'>Inventory</a>
+                <a mat-list-item routerLink='/provisioning'>
+                    <span class="material-icons-outlined sidenav-icon">
+                        cloud_upload
+                    </span>
+                    <b>Provisioning</b>
+                </a>
+                <a mat-list-item routerLink='/request'>
+                    <span class="material-icons-outlined sidenav-icon">
+                        create
+                    </span>
+                    Request
+                </a>
+                <a mat-list-item routerLink='/inventory'>
+                    <span class="material-icons-outlined sidenav-icon">
+                        device_hub
+                    </span>
+                    Inventory
+                </a>
             </mat-nav-list>
         </mat-sidenav>
 
@@ -41,6 +56,7 @@
                     </div>
                 </div>
                 <div class="row">
+                    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
                     <div class="col-lg-4 col-md-4 card-padding" *ngFor="let provisioning of obs | async ">
                         <mat-card class="vmware-card">
                             <mat-card-header>

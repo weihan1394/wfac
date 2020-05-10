@@ -1,0 +1,7 @@
+{
+  "provisioning-example": {
+    "email": "test",
+    "password": "test",
+    "submit": true
+  }
+}
