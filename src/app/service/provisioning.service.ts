@@ -14,7 +14,7 @@ export class ProvisioningService {
 
   constructor(private httpClient: HttpClient) { }
 
-  baseUrl: string = '/api/provisioning-example';
+  baseUrl: string = '/api2/';
   getProvisioning(): Observable<any> {
     return this.httpClient.get<any>(this.baseUrl).pipe
       (
@@ -38,7 +38,8 @@ export class ProvisioningService {
     else {
       errorMessage = "A HTTP error has occurred: " + `HTTP ${error.status}: ${error.error.message}`;
     }
-
+    
+    console.error(error);
     console.error(errorMessage);
 
     return throwError(errorMessage);
