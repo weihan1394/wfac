@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 80 --host 0.0.0.0 --disableHostCheck true",
+    "start": "ng serve --port 4200 --host 0.0.0.0 --disableHostCheck true",
     "build": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build",
     "test": "ng test",
     "lint": "ng lint",
