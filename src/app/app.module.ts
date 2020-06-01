@@ -35,6 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 // spinner
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MainComponent,
     ProvisioningPageComponent,
     RequestPageComponent,
-    InventoryPageComponent
+    InventoryPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

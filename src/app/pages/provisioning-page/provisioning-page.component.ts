@@ -40,7 +40,23 @@ export class ProvisioningPageComponent implements OnInit {
   // dataSource;
 
   ngOnInit() {
-    this.username = sessionStorage.getItem('loggedUser');
+    // get the username
+    KeycloakService.getUserDetails().then(
+      userDetails => {
+        // sessionStorage.setItem('loggedUser', data.Username);
+        console.log(userDetails["username"]);
+
+        // check if userDetails object has username
+        if (userDetails.hasOwnProperty('username')) {
+          sessionStorage.loggedUser = userDetails["username"];
+
+          this.username = sessionStorage.loggedUser;
+          // sessionStorage.setItem('loggedUser', userDetails["username"]);
+        }
+      }
+    );
+
+    
 
     // get provisioning
     this.provisioningService.getProvisioning().subscribe(

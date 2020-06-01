@@ -1,8 +1,8 @@
 export const environment = {
-  baseUrl: 'http://localhost:8080',
+  baseUrl: 'http://portal-wfacp.psoseak.org',
   production: false,
 
-  keycloakRealm: 'pso-seak',
-  keycloakClient: 'pso-seak-app',
-  keycloakBaseUrl: 'http://localhost:9000/auth'
+  keycloakRealm: 'WFAC',
+  keycloakClient: 'wfac-fe',
+  keycloakBaseUrl: 'https://idm-wfacp.psoseak.org/auth'
 };

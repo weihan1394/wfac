@@ -29,7 +29,8 @@ export class AuthGuardService implements CanActivate, CanLoad {
 
                     // check if userDetails object has username
                     if (userDetails.hasOwnProperty('username')) {
-                        sessionStorage.setItem('loggedUser', userDetails["username"]);
+                        sessionStorage.loggedUser = userDetails["username"];
+                        // sessionStorage.setItem('loggedUser', userDetails["username"]);
                     }
                 }
             );
