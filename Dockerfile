@@ -28,7 +28,8 @@ FROM nginx:1.18.0-alpine
 
 # overwrite default nginx website
 RUN rm -rf /usr/share/nginx/html/*
-COPY ./provisioning/conf /usr/share/nginx/html
+# COPY ./provisioning/conf /usr/share/nginx/html
+COPY ./provisioning/conf /etc/nginx/conf.d
 
 # copy artifact build from the 'build environment'
 COPY --from=build /app/dist /usr/share/nginx/html
