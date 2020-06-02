@@ -4,7 +4,8 @@ const PROXY_CONFIG = [
             "/api2"
         ],
         target: "https://api-wfacp.psoseak.org/api/forms",
-        secure: true,
+        secure: false,
+        changeOrigin: true,
         pathRewrite: {
             "^/api2": ""
         },
