@@ -7,4 +7,5 @@
   "resource": "wfac-fe",
   "verify-token-audience": true,
   "confidential-port": 0
+  
 }
