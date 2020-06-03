@@ -4,5 +4,8 @@ export const environment = {
 
   keycloakRealm: 'WFAC',
   keycloakClient: 'wfac-fe',
-  keycloakBaseUrl: 'https://idm-wfacp.psoseak.org/auth'
+  keycloakBaseUrl: 'https://idm-wfacp.psoseak.org/auth',
+  backend: {
+    baseURL:"/api"
+  }
 };

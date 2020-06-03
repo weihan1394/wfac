@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment'
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,8 +15,10 @@ export class ProvisioningService {
 
   constructor(private httpClient: HttpClient) { }
 
-  baseUrl: string = '/api';
+  baseUrl: string = environment.backend.baseURL;
+
   getProvisioning(): Observable<any> {
+    console.log(this.baseUrl);
     return this.httpClient.get<any>(this.baseUrl + "/forms").pipe
       (
         catchError(this.handleError)
