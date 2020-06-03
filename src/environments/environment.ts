@@ -1,5 +1,5 @@
 export const environment = {
-  baseUrl: 'http://portal-wfacp.psoseak.org',
+  baseUrl: 'https://portal-wfacp.psoseak.org',
   production: false,
 
   keycloakRealm: 'WFAC',

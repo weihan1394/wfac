@@ -14,9 +14,9 @@ export class ProvisioningService {
 
   constructor(private httpClient: HttpClient) { }
 
-  baseUrl: string = '/api2/';
+  baseUrl: string = '/api';
   getProvisioning(): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl).pipe
+    return this.httpClient.get<any>(this.baseUrl + "/forms").pipe
       (
         catchError(this.handleError)
       )

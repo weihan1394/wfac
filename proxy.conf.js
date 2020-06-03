@@ -3,7 +3,7 @@ const PROXY_CONFIG = [
         context: [
             "/api2"
         ],
-        target: "https://api-wfacp.psoseak.org/api/forms",
+        target: "https://api-wfacp.psoseak.org/api",
         secure: false,
         changeOrigin: true,
         pathRewrite: {
@@ -15,7 +15,7 @@ const PROXY_CONFIG = [
         context: [
             "/api"
         ],
-        target: "https://api-wfacp.psoseak.org/api/forms",
+        target: "https://api-wfacp.psoseak.org/api",
         secure: false,
         changeOrigin: true,
         pathRewrite: {
