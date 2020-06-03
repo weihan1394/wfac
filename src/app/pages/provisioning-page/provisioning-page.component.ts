@@ -61,10 +61,13 @@ export class ProvisioningPageComponent implements OnInit {
     // get provisioning
     this.provisioningService.getProvisioning().subscribe(
       response => {
+        console.log("error");
+        console.log(response);
         let provisioningReader = new Provisioning;
         // parse json to object
         provisioningReader = response;
         this.dataSource.data = provisioningReader.provisioning;
+        console.log(this.dataSource.data);
       }, error => {
       }
     )
