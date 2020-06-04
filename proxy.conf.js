@@ -3,7 +3,7 @@ const PROXY_CONFIG = [
         context: [
             "/api2"
         ],
-        target: "https://api-wfacp.psoseak.org/api",
+        target: "http://localhost:4001/api",
         secure: false,
         changeOrigin: true,
         pathRewrite: {
@@ -15,7 +15,7 @@ const PROXY_CONFIG = [
         context: [
             "/api"
         ],
-        target: "https://api-wfacp.psoseak.org/api",
+        target: "http://localhost:4000/api",
         secure: false,
         changeOrigin: true,
         pathRewrite: {
@@ -23,6 +23,7 @@ const PROXY_CONFIG = [
         },
         logLevel: "debug"
     }
+   
 ]
 
 module.exports = PROXY_CONFIG;

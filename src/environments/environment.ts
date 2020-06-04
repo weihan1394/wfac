@@ -1,10 +1,10 @@
 export const environment = {
-  baseUrl: 'https://portal-wfacp.psoseak.org',
+  baseUrl: 'https://localhost:8080',
   production: false,
 
   keycloakRealm: 'WFAC',
   keycloakClient: 'wfac-fe',
-  keycloakBaseUrl: 'https://idm-wfacp.psoseak.org/auth',
+  keycloakBaseUrl: 'https://localhost:9000/auth',
   backend: {
     baseURL: '/api'
   }

@@ -1,19 +1,27 @@
 {
-  "posts": [
+  "provisioning-example": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "leaveType": "phl",
+      "description": "Description is here",
+      "startDate": "2020-06-04",
+      "endDate": "2020-06-06",
+      "submit": true,
+      "apiId": "api",
+      "id": 3
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "description": "description is here",
+      "sourcelocation": "Jurong",
+      "destinationlocation": "Bugis",
+      "TravelRequestDate_StartDate": "2020-06-05",
+      "TravelRequestDate_EndDate": "2020-06-06",
+      "submit": true,
+      "airticketcost": 10,
+      "transportcost": 20,
+      "lodgingcost": 30,
+      "mealcost": 40,
+      "apiId": "api",
+      "id": 4
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
