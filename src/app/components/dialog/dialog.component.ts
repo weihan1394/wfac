@@ -12,16 +12,22 @@ import { ProvisioningService } from '../../service/provisioning.service';
 })
 export class DialogComponent {
   provisioningItem: ProvisioningItem;
+  provisioningForm: String;
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private toastr: ToastrService, private provisioningService: ProvisioningService) {
+    console.log("here");
+    console.log(data);
+    this.provisioningForm = data.provisioning.vm_form;
     this.provisioningItem = data.provisioning;
   }
 
   onSubmit(submission) {
-    console.log(submission.data);
-    console.log(submission);
+    // add form id
+    var formDetails = {"vm_form": this.provisioningForm};
+    var moreDetails = submission.data;
+    moreDetails.vm_form = this.provisioningForm;
 
-    this.provisioningService.sendProvisioning(submission.data).subscribe(
+    this.provisioningService.sendProvisioning(moreDetails).subscribe(
       result => {
         console.log(result);
       },
@@ -32,7 +38,6 @@ export class DialogComponent {
     this.dialogRef.close();
 
     this.toastr.success('', 'Provisioned created!', {
-      timeOut: 20000,
       progressBar: true,
       closeButton: true,
       progressAnimation: 'decreasing',
