@@ -1,11 +1,10 @@
 {
   "realm": "WFAC",
   "clientId": "wfac-fe",
-  "url": "http://localhost:9000/auth/",
-  "auth-server-url": "http://localhost:9000/auth/",
-  "ssl-required": "none",
+  "url": "https://idm-wfacp.psoseak.org/auth/",
+  "auth-server-url": "https://idm-wfacp.psoseak.org/auth/",
+  "ssl-required": "external",
   "resource": "wfac-fe",
   "verify-token-audience": true,
   "confidential-port": 0
-  
 }
