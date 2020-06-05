@@ -26,7 +26,7 @@ export class ProvisioningService {
   }
 
   sendProvisioning(result: any): Observable<any> {
-    return this.httpClient.post<any>('/api2/provisioning-example', result, httpOptions).pipe
+    return this.httpClient.post<any>(this.baseUrl + "/services", result, httpOptions).pipe
       (
         catchError(this.handleError)
       )
