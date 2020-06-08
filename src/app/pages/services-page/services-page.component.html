@@ -18,11 +18,11 @@
     <mat-sidenav-container class="vmware-sidenav-container">
         <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
             <mat-nav-list>
-                <a mat-list-item routerLink='/provisioning'>
+                <a mat-list-item routerLink='/services'>
                     <span class="material-icons-outlined sidenav-icon">
                         cloud_upload
                     </span>
-                    <b>Provisioning</b>
+                    <b>Services</b>
                 </a>
                 <a mat-list-item routerLink='/request'>
                     <span class="material-icons-outlined sidenav-icon">
@@ -43,7 +43,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h2 class="primary-heading">Provisioning</h2>
+                        <h2 class="primary-heading">Services</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -61,14 +61,14 @@
                         <mat-card class="vmware-card">
                             <mat-card-header>
                                 <div mat-card-avatar class="vmware-header-image"
-                                    [ngStyle]="{'background-image': 'url(' + provisioning.vm_icon + ')'}">
+                                    [ngStyle]="{'background-image': 'url(' + provisioning.svc_icon + ')'}">
                                 </div>
-                                <mat-card-title>{{ provisioning.vm_name }}</mat-card-title>
-                                <mat-card-subtitle>{{ provisioning.vm_os }}</mat-card-subtitle>
+                                <mat-card-title>{{ provisioning.svc_name }}</mat-card-title>
+                                <mat-card-subtitle>{{ provisioning.svc_os }}</mat-card-subtitle>
                             </mat-card-header>
                             <mat-card-content>
                                 <p style="height: 50px;">
-                                    {{ provisioning.vm_info }}
+                                    {{ provisioning.svc_info }}
                                 </p>
                             </mat-card-content>
                             <mat-card-actions>

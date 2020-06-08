@@ -16,6 +16,7 @@ export class ProvisioningService {
   constructor(private httpClient: HttpClient) { }
 
   baseUrl: string = environment.backend.baseURL;
+  baseUrl2: string = environment.backend.baseURL2;
 
   getProvisioning(): Observable<any> {
     console.log(this.baseUrl);
@@ -26,7 +27,7 @@ export class ProvisioningService {
   }
 
   sendProvisioning(result: any): Observable<any> {
-    return this.httpClient.post<any>(this.baseUrl + "/services", result, httpOptions).pipe
+    return this.httpClient.post<any>(this.baseUrl2 + "/services", result, httpOptions).pipe
       (
         catchError(this.handleError)
       )

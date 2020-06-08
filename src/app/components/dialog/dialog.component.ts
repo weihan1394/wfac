@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { ProvisioningItem } from '../../models/provisioning-item';
+import { ServicesItem } from '../../models/services-item';
 import { ToastrService } from 'ngx-toastr';
 
 import { ProvisioningService } from '../../service/provisioning.service';
@@ -11,21 +11,20 @@ import { ProvisioningService } from '../../service/provisioning.service';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  provisioningItem: ProvisioningItem;
-  provisioningForm: String;
+  provisioningItem: ServicesItem;
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private toastr: ToastrService, private provisioningService: ProvisioningService) {
-    console.log("here");
-    console.log(data);
-    this.provisioningForm = data.provisioning.vm_form;
     this.provisioningItem = data.provisioning;
   }
 
   onSubmit(submission) {
-    // add form id
-    var formDetails = {"vm_form": this.provisioningForm};
     var moreDetails = submission.data;
-    moreDetails.vm_form = this.provisioningForm;
+    // add form details
+    moreDetails.svc_id = this.provisioningItem.svc_id;
+    moreDetails.svc_icon = this.provisioningItem.svc_icon;
+    moreDetails.svc_name = this.provisioningItem.svc_name;
+    moreDetails.svc_type = this.provisioningItem.svc_type;
+    moreDetails.svc_info = this.provisioningItem.svc_info
 
     this.provisioningService.sendProvisioning(moreDetails).subscribe(
       result => {

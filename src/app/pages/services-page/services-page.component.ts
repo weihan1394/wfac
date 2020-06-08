@@ -13,15 +13,15 @@ import { Observable } from 'rxjs';
 import { KeycloakService } from "../../core/auth/keycloak.service";
 
 import { ProvisioningService } from '../../service/provisioning.service';
-import { Provisioning } from '../../models/provisioning';
-import { ProvisioningItem } from '../../models/provisioning-item';
+import { Services } from '../../models/services';
+import { ServicesItem } from '../../models/services-item';
 
 @Component({
-  selector: 'app-provisioning-page',
-  templateUrl: './provisioning-page.component.html',
-  styleUrls: ['./provisioning-page.component.scss']
+  selector: 'app-services-page',
+  templateUrl: './services-page.component.html',
+  styleUrls: ['./services-page.component.scss']
 })
-export class ProvisioningPageComponent implements OnInit {
+export class ServicesPageComponent implements OnInit {
 
   searchText;
   mobileQuery: MediaQueryList;
@@ -35,7 +35,7 @@ export class ProvisioningPageComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   obs: Observable<any>;
-  dataSource: MatTableDataSource<ProvisioningItem> = new MatTableDataSource<ProvisioningItem>();
+  dataSource: MatTableDataSource<ServicesItem> = new MatTableDataSource<ServicesItem>();
 
   // dataSource;
 
@@ -63,10 +63,10 @@ export class ProvisioningPageComponent implements OnInit {
       response => {
         console.log("error");
         console.log(response);
-        let provisioningReader = new Provisioning;
+        let provisioningReader = new Services;
         // parse json to object
         provisioningReader = response;
-        this.dataSource.data = provisioningReader.provisioning;
+        this.dataSource.data = provisioningReader.services;
         console.log(this.dataSource.data);
       }, error => {
       }

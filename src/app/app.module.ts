@@ -21,7 +21,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './root/main/main.component';
-import { ProvisioningPageComponent } from './pages/provisioning-page/provisioning-page.component';
+import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { RequestPageComponent } from './pages/request-page/request-page.component';
 import { InventoryPageComponent } from './pages/inventory-page/inventory-page.component';
 
@@ -42,7 +42,7 @@ import { HeaderComponent } from './components/header/header.component';
     DialogComponent,
     FooterComponent,
     MainComponent,
-    ProvisioningPageComponent,
+    ServicesPageComponent,
     RequestPageComponent,
     InventoryPageComponent,
     HeaderComponent

@@ -1,5 +1,5 @@
 {
-  "provisioning-example": [
+  "services": [
     {
       "leaveType": "phl",
       "description": "Description is here",
@@ -109,6 +109,76 @@
       "vm_form": "leverequestform",
       "apiId": "api",
       "id": 13
+    },
+    {
+      "leaveType": "Floating Leave",
+      "description": "asd",
+      "startDate": "2020-06-04",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 14
+    },
+    {
+      "leaveType": "Military Leave",
+      "description": "asd",
+      "startDate": "2020-06-03",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 15
+    },
+    {
+      "leaveType": "Floating Leave",
+      "description": "asd",
+      "startDate": "2020-06-09",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 16
+    },
+    {
+      "leaveType": "Floating Leave",
+      "description": "asd",
+      "startDate": "2020-06-03",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 17
+    },
+    {
+      "leaveType": "Military Leave",
+      "description": "new",
+      "startDate": "2020-06-09",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 18
     }
   ]
 }
