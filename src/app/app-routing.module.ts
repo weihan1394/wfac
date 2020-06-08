@@ -25,7 +25,7 @@ const routes: Routes = [{
     component: InventoryPageComponent,
     canActivate: [AuthGuard],
   },
-  { path: '', redirectTo: 'provisioning', pathMatch: 'full' },
+  { path: '', redirectTo: 'services', pathMatch: 'full' },
 ];
 
 @NgModule({
