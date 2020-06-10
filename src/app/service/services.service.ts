@@ -18,7 +18,6 @@ export class ServicesService {
   baseUrl: string = environment.backend.baseURL;
 
   getProvisioning(): Observable<any> {
-    console.log(this.baseUrl);
     return this.httpClient.get<any>(this.baseUrl + "/forms").pipe
       (
         catchError(this.handleError)

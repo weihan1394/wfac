@@ -14,7 +14,6 @@ export class RequestsService {
   baseUrl: string = environment.backend.baseURL;
 
   getRequests(): Observable<any> {
-    console.log(this.baseUrl);
     return this.httpClient.get<any>(this.baseUrl + "/requests").pipe
       (
         catchError(this.handleError)

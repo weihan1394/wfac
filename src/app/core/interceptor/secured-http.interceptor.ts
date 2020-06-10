@@ -35,12 +35,10 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
             });
         }
 
-        console.log("interceptor");
-        console.log(request);
         return next.handle(request)
             .pipe(tap(
-                event => console.log(event),
-                error => console.log(error)
+                // event => console.log(event),
+                // error => console.log(error)
             ), finalize(() => {
                 this.count--;
                 if (this.count == 0) {

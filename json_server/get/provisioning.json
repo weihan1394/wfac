@@ -632,8 +632,17 @@
       }
     ]
   },
-  "services": [
-    {
-    }
-  ]
+  "services": {
+    "leaveType": "Floating Leave",
+    "description": "asd",
+    "startDate": "2020-06-10",
+    "endDate": "2020-06-11",
+    "submit": true,
+    "svc_id": "lvereq",
+    "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+    "svc_name": "Leave Request Service",
+    "svc_type": "Leave Request",
+    "svc_info": "Submit your leave request here.",
+    "apiId": "api"
+  }
 }

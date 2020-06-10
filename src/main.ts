@@ -18,6 +18,5 @@ KeycloakService.init()
     platformBrowserDynamic().bootstrapModule(AppModule);
   })
   .catch(function (error) {
-    console.log(JSON.stringify(error));
     return;
   });

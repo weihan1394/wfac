@@ -24,9 +24,6 @@ export class AuthGuardService implements CanActivate, CanLoad {
             // get the username
             KeycloakService.getUserDetails().then(
                 userDetails => {
-                    // sessionStorage.setItem('loggedUser', data.Username);
-                    console.log(userDetails["username"]);
-
                     // check if userDetails object has username
                     if (userDetails.hasOwnProperty('username')) {
                         sessionStorage.loggedUser = userDetails["username"];
@@ -54,7 +51,6 @@ export class AuthGuardService implements CanActivate, CanLoad {
         }
 
         let data = route.data["Permission"] as PermissionGuard;
-        console.log(data.Role);
         if (data.Role) {
             let hasDefined = KeycloakService.hasRole(data.Role)
             if (hasDefined)
@@ -66,8 +62,6 @@ export class AuthGuardService implements CanActivate, CanLoad {
             return false;
 
         } else {
-            console.log('unrole');
-
             if (Array.isArray(data.Only) && Array.isArray(data.Except)) {
                 throw "Can't use both 'Only' and 'Except' in route data.";
             }

@@ -73,7 +73,6 @@ export class KeycloakService {
      * Logout the current user
      */
     static logout() {
-        console.log('*** LOGOUT');
         KeycloakService.auth.authz.logout({ redirectUri: KeycloakService.auth.logoutUrl });
         KeycloakService.auth.loggedIn = false;
         KeycloakService.auth.authz = null;
@@ -84,7 +83,6 @@ export class KeycloakService {
      */
     static login() {
         KeycloakService.auth.authz.login();
-        console.log("done");
     }
 
     /**
@@ -124,11 +122,8 @@ export class KeycloakService {
     static getUserDetails(): Promise<object> {
         return KeycloakService.auth.authz.loadUserProfile()
             .then(function (profile) {
-                // console.log(profile);
-                // console.log(JSON.stringify(profile, null, "  "));
                 return(profile);
             }).catch(function () {
-                // console.log('Failed to load user profile');
                 return('Failed to load user profile');
             });
         
