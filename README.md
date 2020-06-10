@@ -1,5 +1,5 @@
-# Ang-Material
-PSO Trial Project v0.1-beta
+# WFAC
+PSO Trial WFAC Project v0.1-beta
 
 ## Pre-requisite
 - [Node](https://nodejs.org/en/download/releases/) version 12.16.1
