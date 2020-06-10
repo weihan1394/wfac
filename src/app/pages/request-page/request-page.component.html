@@ -12,7 +12,7 @@
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="getKeycloakService().getUserDetails()">Profile</button>
             <button mat-menu-item (click)="getKeycloakService().logout()">Logout</button>
-        </mat-menu> 
+        </mat-menu>
     </mat-toolbar>
 
     <mat-sidenav-container class="vmware-sidenav-container">
@@ -47,8 +47,11 @@
 
                     </div>
                 </div>
-                <div class="row" style="padding-top: 20px;">                    
-                    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-clip-rotate" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+                <div class="row" style="padding-top: 20px;">
+                    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate"
+                        [fullScreen]="true">
+                        <p style="color: white"> Loading... </p>
+                    </ngx-spinner>
                     <div class="col-lg-12">
                         <div class="example-header">
                             <mat-form-field>
@@ -59,38 +62,53 @@
                 </div>
                 <div class="row" style="padding-top: 20px;">
                     <div class="col-lg-12">
-                        <mat-table [dataSource]="dataSource" matSort matSortActive="request_Progress" matSortDirection="asc">
+                        <mat-table [dataSource]="dataSource" matSort matSortActive="request_Progress"
+                            matSortDirection="asc">
 
                             <!-- ID Column -->
                             <ng-container matColumnDef="request_Id">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-                                <mat-cell *matCellDef="let element"> {{ element.request_Id }} </mat-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <span class="mobile-label">ID: </span>
+                                    {{ element.request_Id }}
+                                </mat-cell>
                             </ng-container>
 
 
                             <ng-container matColumnDef="svc_type">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
-                                <mat-cell *matCellDef="let element"> <img [src]="element.svc_icon"
-                                        class="mat-cell-img" /> {{element.svc_type}} </mat-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <span class="mobile-label">Type: </span>
+                                    <img [src]="element.svc_icon" class="mat-cell-img" /> {{element.svc_type}}
+                                </mat-cell>
                             </ng-container>
 
                             <ng-container matColumnDef="submittedOn">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> Submitted </mat-header-cell>
-                                <mat-cell *matCellDef="let element"> {{element.submittedOn}} </mat-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <span class="mobile-label">Submitted: </span>
+                                    {{element.submittedOn}}
+                                </mat-cell>
                             </ng-container>
 
 
                             <ng-container matColumnDef="request_Status">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
-                                <mat-cell *matCellDef="let element"> {{element.request_Status}} </mat-cell>
+                                <mat-cell *matCellDef="let element"> 
+                                    <span class="mobile-label">Status: </span>
+                                    {{element.request_Status}} 
+                                </mat-cell>
                             </ng-container>
 
 
                             <ng-container matColumnDef="request_Progress">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
                                 <mat-cell *matCellDef="let element">
-                                    <mat-progress-bar mode="determinate" value={{element.request_Progress}}>
-                                    </mat-progress-bar>
+                                    <span class="mobile-label">Progress: </span>
+                                    <span style="min-width: 170px">
+                                        <mat-progress-bar mode="determinate" value={{element.request_Progress}}>
+                                        </mat-progress-bar>
+                                    </span>
                                 </mat-cell>
                             </ng-container>
 
