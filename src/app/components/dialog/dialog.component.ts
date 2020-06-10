@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ServicesItem } from '../../models/services-item';
 import { ToastrService } from 'ngx-toastr';
 
-import { ProvisioningService } from '../../service/provisioning.service';
+import { ServicesService } from '../../service/services.service';
 
 @Component({
   selector: 'app-dialog',
@@ -13,7 +13,7 @@ import { ProvisioningService } from '../../service/provisioning.service';
 export class DialogComponent {
   provisioningItem: ServicesItem;
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private toastr: ToastrService, private provisioningService: ProvisioningService) {
+  constructor(public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private toastr: ToastrService, private servicesService: ServicesService) {
     this.provisioningItem = data.provisioning;
   }
 
@@ -26,7 +26,7 @@ export class DialogComponent {
     moreDetails.svc_type = this.provisioningItem.svc_type;
     moreDetails.svc_info = this.provisioningItem.svc_info
 
-    this.provisioningService.sendProvisioning(moreDetails).subscribe(
+    this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
         console.log(result);
       },

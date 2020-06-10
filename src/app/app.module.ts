@@ -12,6 +12,8 @@ import {
   MatToolbarModule,
   MatGridListModule,
   MatPaginatorModule,
+  MatSortModule,
+  MatProgressBarModule
 } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 
@@ -60,6 +62,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatGridListModule,
     MatPaginatorModule,
     MatMenuModule,
+    MatSortModule,
+    MatProgressBarModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(), // ToastrModule added

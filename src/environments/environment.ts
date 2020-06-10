@@ -6,7 +6,6 @@ export const environment = {
   keycloakClient: 'wfac-fe',
   keycloakBaseUrl: 'https://localhost:9000/auth',
   backend: {
-    baseURL: '/api',
-    baseURL2: '/api2'
+    baseURL: '/api'
   }
 };

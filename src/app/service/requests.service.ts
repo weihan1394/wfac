@@ -4,30 +4,18 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment'
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-
 @Injectable({
   providedIn: 'root'
 })
-export class ProvisioningService {
+export class RequestsService {
 
   constructor(private httpClient: HttpClient) { }
 
   baseUrl: string = environment.backend.baseURL;
-  baseUrl2: string = environment.backend.baseURL2;
 
-  getProvisioning(): Observable<any> {
+  getRequests(): Observable<any> {
     console.log(this.baseUrl);
-    return this.httpClient.get<any>(this.baseUrl + "/forms").pipe
-      (
-        catchError(this.handleError)
-      )
-  }
-
-  sendProvisioning(result: any): Observable<any> {
-    return this.httpClient.post<any>(this.baseUrl2 + "/services", result, httpOptions).pipe
+    return this.httpClient.get<any>(this.baseUrl + "/requests").pipe
       (
         catchError(this.handleError)
       )

@@ -5,12 +5,5 @@
     "pathRewrite": {
       "^/api": ""
     }
-  },
-  "/api2": {
-    "target": "https://api-wfacp.psoseak.org/api/forms",
-    "secure": false,
-    "pathRewrite": {
-      "^/api2": ""
-    }
   }
 }

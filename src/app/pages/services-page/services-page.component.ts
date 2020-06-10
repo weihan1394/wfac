@@ -12,7 +12,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { KeycloakService } from "../../core/auth/keycloak.service";
 
-import { ProvisioningService } from '../../service/provisioning.service';
+import { ServicesService } from '../../service/services.service';
 import { Services } from '../../models/services';
 import { ServicesItem } from '../../models/services-item';
 
@@ -27,7 +27,7 @@ export class ServicesPageComponent implements OnInit {
   mobileQuery: MediaQueryList;
   username: String;
   private _mobileQueryListener: () => void;
-  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient, private provisioningService: ProvisioningService) {
+  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient, private servicesService: ServicesService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -59,7 +59,7 @@ export class ServicesPageComponent implements OnInit {
     
 
     // get provisioning
-    this.provisioningService.getProvisioning().subscribe(
+    this.servicesService.getProvisioning().subscribe(
       response => {
         console.log("error");
         console.log(response);
