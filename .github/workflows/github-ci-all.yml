@@ -1,4 +1,4 @@
-name: ang-material
+name: wfac
 
 # trigger the workflow when someone pushes the code to repo
 on:
@@ -9,7 +9,7 @@ on:
 jobs:
   # Run tests.
   # See also https://docs.docker.com/docker-hub/builds/automated-testing/
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
