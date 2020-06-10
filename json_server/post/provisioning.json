@@ -1,0 +1,184 @@
+{
+  "services": [
+    {
+      "leaveType": "phl",
+      "description": "Description is here",
+      "startDate": "2020-06-04",
+      "endDate": "2020-06-06",
+      "submit": true,
+      "apiId": "api",
+      "id": 3
+    },
+    {
+      "description": "description is here",
+      "sourcelocation": "Jurong",
+      "destinationlocation": "Bugis",
+      "TravelRequestDate_StartDate": "2020-06-05",
+      "TravelRequestDate_EndDate": "2020-06-06",
+      "submit": true,
+      "airticketcost": 10,
+      "transportcost": 20,
+      "lodgingcost": 30,
+      "mealcost": 40,
+      "apiId": "api",
+      "id": 4
+    },
+    {
+      "leaveType": "phl",
+      "description": "asd",
+      "startDate": "2020-06-03",
+      "endDate": "2020-06-05",
+      "submit": true,
+      "apiId": "api",
+      "id": 5
+    },
+    {
+      "leaveType": "phl",
+      "description": "asd",
+      "startDate": "2020-06-02",
+      "endDate": "2020-06-03",
+      "submit": true,
+      "apiId": "api",
+      "id": 6
+    },
+    {
+      "leaveType": "phl",
+      "description": "asd",
+      "startDate": "2020-06-10",
+      "endDate": "2020-06-12",
+      "submit": true,
+      "apiId": "api",
+      "id": 7
+    },
+    {
+      "leaveType": "phl",
+      "description": "asd",
+      "startDate": "2020-06-04",
+      "endDate": "2020-06-12",
+      "submit": true,
+      "apiId": "api",
+      "id": 8
+    },
+    {
+      "leaveType": "phl",
+      "description": "asd",
+      "startDate": "2020-06-09",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "apiId": "api",
+      "id": 9
+    },
+    {
+      "leaveType": "phl",
+      "description": "asd",
+      "startDate": "2020-06-11",
+      "endDate": "2020-06-12",
+      "submit": true,
+      "apiId": "api",
+      "id": 10
+    },
+    {
+      "leaveType": "phl",
+      "description": "asd",
+      "startDate": "2020-06-17",
+      "endDate": "2020-06-26",
+      "submit": true,
+      "apiId": "api",
+      "id": 11
+    },
+    {
+      "formDetails": {
+        "vm_form": "leverequestform"
+      },
+      "moreDetails": {
+        "leaveType": "phl",
+        "description": "asd",
+        "startDate": "2020-06-11",
+        "endDate": "2020-06-20",
+        "submit": true
+      },
+      "apiId": "api",
+      "id": 12
+    },
+    {
+      "textField": "12",
+      "textField1": "asd",
+      "day": "01/01/1900",
+      "phoneNumber": "as",
+      "submit": true,
+      "vm_form": "leverequestform",
+      "apiId": "api",
+      "id": 13
+    },
+    {
+      "leaveType": "Floating Leave",
+      "description": "asd",
+      "startDate": "2020-06-04",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 14
+    },
+    {
+      "leaveType": "Military Leave",
+      "description": "asd",
+      "startDate": "2020-06-03",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 15
+    },
+    {
+      "leaveType": "Floating Leave",
+      "description": "asd",
+      "startDate": "2020-06-09",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 16
+    },
+    {
+      "leaveType": "Floating Leave",
+      "description": "asd",
+      "startDate": "2020-06-03",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 17
+    },
+    {
+      "leaveType": "Military Leave",
+      "description": "new",
+      "startDate": "2020-06-09",
+      "endDate": "2020-06-10",
+      "submit": true,
+      "svc_id": "lvereq",
+      "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",
+      "svc_name": "Leave Request Service",
+      "svc_type": "Leave Request",
+      "svc_info": "Submit your leave request here.",
+      "apiId": "api",
+      "id": 18
+    }
+  ]
+}

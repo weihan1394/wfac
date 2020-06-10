@@ -2,28 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProvisioningService {
+export class RequestsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  baseUrl: string = '/api/provisioning-example';
-  getProvisioning(): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl).pipe
-      (
-        catchError(this.handleError)
-      )
-  }
+  baseUrl: string = environment.backend.baseURL;
 
-  sendProvisioning(result: any): Observable<any> {
-    return this.httpClient.post<any>('/api2/provisioning-example', result, httpOptions).pipe
+  getRequests(): Observable<any> {
+    console.log(this.baseUrl);
+    return this.httpClient.get<any>(this.baseUrl + "/requests").pipe
       (
         catchError(this.handleError)
       )
@@ -38,7 +30,8 @@ export class ProvisioningService {
     else {
       errorMessage = "A HTTP error has occurred: " + `HTTP ${error.status}: ${error.error.message}`;
     }
-
+    
+    console.error(error);
     console.error(errorMessage);
 
     return throwError(errorMessage);

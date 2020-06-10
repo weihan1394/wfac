@@ -17,7 +17,7 @@ RUN npm install -g @angular/cli@8.3.22
 COPY . .
 
 # generate build
-RUN ng build --output-path=dist
+RUN ng build --prod --output-path=dist 
 
 
 ############
@@ -28,7 +28,8 @@ FROM nginx:1.18.0-alpine
 
 # overwrite default nginx website
 RUN rm -rf /usr/share/nginx/html/*
-COPY ./provisioning/conf /usr/share/nginx/html
+# COPY ./provisioning/conf /usr/share/nginx/html
+COPY ./provisioning/conf /etc/nginx/conf.d
 
 # copy artifact build from the 'build environment'
 COPY --from=build /app/dist /usr/share/nginx/html

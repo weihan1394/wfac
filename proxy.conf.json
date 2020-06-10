@@ -1,16 +1,9 @@
 {
   "/api": {
-    "target": "http://localhost:4000",
+    "target": "https://api-wfacp.psoseak.org/api/forms",
     "secure": false,
     "pathRewrite": {
       "^/api": ""
-    }
-  },
-  "/api2": {
-    "target": "http://localhost:4001",
-    "secure": false,
-    "pathRewrite": {
-      "^/api2": ""
     }
   }
 }

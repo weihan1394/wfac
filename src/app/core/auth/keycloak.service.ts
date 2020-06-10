@@ -84,6 +84,7 @@ export class KeycloakService {
      */
     static login() {
         KeycloakService.auth.authz.login();
+        console.log("done");
     }
 
     /**

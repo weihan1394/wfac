@@ -34,6 +34,9 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
                 }
             });
         }
+
+        console.log("interceptor");
+        console.log(request);
         return next.handle(request)
             .pipe(tap(
                 event => console.log(event),
@@ -44,6 +47,6 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
                     this.spinner.hide()
                 }
             })
-            );;
+            );
     }
 }

@@ -1,9 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { ProvisioningItem } from '../../models/provisioning-item';
+import { ServicesItem } from '../../models/services-item';
 import { ToastrService } from 'ngx-toastr';
 
-import { ProvisioningService } from '../../service/provisioning.service';
+import { ServicesService } from '../../service/services.service';
 
 @Component({
   selector: 'app-dialog',
@@ -11,17 +11,22 @@ import { ProvisioningService } from '../../service/provisioning.service';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  provisioningItem: ProvisioningItem;
+  provisioningItem: ServicesItem;
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private toastr: ToastrService, private provisioningService: ProvisioningService) {
+  constructor(public dialogRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private toastr: ToastrService, private servicesService: ServicesService) {
     this.provisioningItem = data.provisioning;
   }
 
   onSubmit(submission) {
-    console.log(submission.data);
-    console.log(submission);
+    var moreDetails = submission.data;
+    // add form details
+    moreDetails.svc_id = this.provisioningItem.svc_id;
+    moreDetails.svc_icon = this.provisioningItem.svc_icon;
+    moreDetails.svc_name = this.provisioningItem.svc_name;
+    moreDetails.svc_type = this.provisioningItem.svc_type;
+    moreDetails.svc_info = this.provisioningItem.svc_info
 
-    this.provisioningService.sendProvisioning(submission.data).subscribe(
+    this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
         console.log(result);
       },
@@ -32,7 +37,6 @@ export class DialogComponent {
     this.dialogRef.close();
 
     this.toastr.success('', 'Provisioned created!', {
-      timeOut: 20000,
       progressBar: true,
       closeButton: true,
       progressAnimation: 'decreasing',

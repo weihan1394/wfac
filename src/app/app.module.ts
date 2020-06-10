@@ -12,6 +12,8 @@ import {
   MatToolbarModule,
   MatGridListModule,
   MatPaginatorModule,
+  MatSortModule,
+  MatProgressBarModule
 } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 
@@ -21,7 +23,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './root/main/main.component';
-import { ProvisioningPageComponent } from './pages/provisioning-page/provisioning-page.component';
+import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { RequestPageComponent } from './pages/request-page/request-page.component';
 import { InventoryPageComponent } from './pages/inventory-page/inventory-page.component';
 
@@ -35,15 +37,17 @@ import { ToastrModule } from 'ngx-toastr';
 
 // spinner
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     DialogComponent,
     FooterComponent,
     MainComponent,
-    ProvisioningPageComponent,
+    ServicesPageComponent,
     RequestPageComponent,
-    InventoryPageComponent
+    InventoryPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatGridListModule,
     MatPaginatorModule,
     MatMenuModule,
+    MatSortModule,
+    MatProgressBarModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(), // ToastrModule added

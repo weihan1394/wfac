@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // routes for page component
-import { ProvisioningPageComponent } from './pages/provisioning-page/provisioning-page.component';
+import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { RequestPageComponent } from './pages/request-page/request-page.component';
 import { InventoryPageComponent } from './pages/inventory-page/inventory-page.component';
 
@@ -11,8 +11,8 @@ import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
 
 
 const routes: Routes = [{
-    path: 'provisioning',
-    component: ProvisioningPageComponent,
+    path: 'services',
+    component: ServicesPageComponent,
     canActivate: [AuthGuard],
   },
   {
@@ -25,7 +25,7 @@ const routes: Routes = [{
     component: InventoryPageComponent,
     canActivate: [AuthGuard],
   },
-  { path: '', redirectTo: 'provisioning', pathMatch: 'full' },
+  { path: '', redirectTo: 'services', pathMatch: 'full' },
 ];
 
 @NgModule({

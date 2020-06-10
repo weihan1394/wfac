@@ -1,10 +1,11 @@
 import { Deserializable } from "./deserializable";
 
-export class ProvisioningItem implements Deserializable {
-    vm_icon: String;
-    vm_name: String;
-    vm_os: String;
-    vm_info: String;
+export class ServicesItem implements Deserializable {
+    svc_id: String;
+    svc_icon: String;
+    svc_name: String;
+    svc_type: String;
+    svc_info: String;
     type: String;
     display: String;
     componenets: any;

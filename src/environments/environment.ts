@@ -1,8 +1,11 @@
 export const environment = {
-  baseUrl: 'http://localhost:8080',
+  baseUrl: 'https://localhost:8080',
   production: false,
 
-  keycloakRealm: 'pso-seak',
-  keycloakClient: 'pso-seak-app',
-  keycloakBaseUrl: 'http://localhost:9000/auth'
+  keycloakRealm: 'WFAC',
+  keycloakClient: 'wfac-fe',
+  keycloakBaseUrl: 'https://localhost:9000/auth',
+  backend: {
+    baseURL: '/api'
+  }
 };

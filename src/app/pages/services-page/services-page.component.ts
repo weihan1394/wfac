@@ -12,22 +12,22 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { KeycloakService } from "../../core/auth/keycloak.service";
 
-import { ProvisioningService } from '../../service/provisioning.service';
-import { Provisioning } from '../../models/provisioning';
-import { ProvisioningItem } from '../../models/provisioning-item';
+import { ServicesService } from '../../service/services.service';
+import { Services } from '../../models/services';
+import { ServicesItem } from '../../models/services-item';
 
 @Component({
-  selector: 'app-provisioning-page',
-  templateUrl: './provisioning-page.component.html',
-  styleUrls: ['./provisioning-page.component.scss']
+  selector: 'app-services-page',
+  templateUrl: './services-page.component.html',
+  styleUrls: ['./services-page.component.scss']
 })
-export class ProvisioningPageComponent implements OnInit {
+export class ServicesPageComponent implements OnInit {
 
   searchText;
   mobileQuery: MediaQueryList;
   username: String;
   private _mobileQueryListener: () => void;
-  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient, private provisioningService: ProvisioningService) {
+  constructor(public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpClient: HttpClient, private servicesService: ServicesService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -35,20 +35,39 @@ export class ProvisioningPageComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   obs: Observable<any>;
-  dataSource: MatTableDataSource<ProvisioningItem> = new MatTableDataSource<ProvisioningItem>();
+  dataSource: MatTableDataSource<ServicesItem> = new MatTableDataSource<ServicesItem>();
 
   // dataSource;
 
   ngOnInit() {
-    this.username = sessionStorage.getItem('loggedUser');
+    // get the username
+    KeycloakService.getUserDetails().then(
+      userDetails => {
+        // sessionStorage.setItem('loggedUser', data.Username);
+        console.log(userDetails["username"]);
+
+        // check if userDetails object has username
+        if (userDetails.hasOwnProperty('username')) {
+          sessionStorage.loggedUser = userDetails["username"];
+
+          this.username = sessionStorage.loggedUser;
+          // sessionStorage.setItem('loggedUser', userDetails["username"]);
+        }
+      }
+    );
+
+    
 
     // get provisioning
-    this.provisioningService.getProvisioning().subscribe(
+    this.servicesService.getProvisioning().subscribe(
       response => {
-        let provisioningReader = new Provisioning;
+        console.log("error");
+        console.log(response);
+        let provisioningReader = new Services;
         // parse json to object
         provisioningReader = response;
-        this.dataSource.data = provisioningReader.provisioning;
+        this.dataSource.data = provisioningReader.services;
+        console.log(this.dataSource.data);
       }, error => {
       }
     )

@@ -1,9 +1,9 @@
 import { Deserializable } from "./deserializable";
-import { ProvisioningItem } from './provisioning-item';
+import { ServicesItem } from './services-item';
 
-export class Provisioning implements Deserializable {
+export class Services implements Deserializable {
 
-    provisioning: ProvisioningItem[];
+    services: ServicesItem[];
     count: Number;
 
     deserialize(input: any) {

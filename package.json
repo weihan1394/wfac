@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 8080",
-    "build": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build",
+    "start": "ng serve --port 8080 --host 0.0.0.0 --disableHostCheck true",
+    "build": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -28,7 +28,7 @@
     "angular-material-formio": "^1.19.0",
     "chart.js": "^2.5.0",
     "font-awesome": "^4.7.0",
-    "formiojs": "^4.9.0",
+    "formiojs": "^4.10.0-rc.6",
     "hammerjs": "^2.0.8",
     "keycloak-js": "^10.0.0",
     "ngx-spinner": "^8.1.0",

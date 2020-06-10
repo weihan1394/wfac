@@ -14,11 +14,28 @@
     </mat-toolbar>
 
     <mat-sidenav-container class="vmware-sidenav-container">
-        <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened="true" mode="side">
+        <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" mode="side">
             <mat-nav-list>
-                <a mat-list-item routerLink='/provisioning'>Provisioning</a>
-                <a mat-list-item routerLink='/request'>Request</a>
-                <a mat-list-item routerLink='/inventory'><b>Inventory</b></a>
+                <mat-nav-list>
+                    <a mat-list-item routerLink='/services'>
+                        <span class="material-icons-outlined sidenav-icon">
+                            cloud_upload
+                        </span>
+                        Services
+                    </a>
+                    <a mat-list-item routerLink='/request'>
+                        <span class="material-icons-outlined sidenav-icon">
+                            create
+                        </span>
+                        Request
+                    </a>
+                    <a mat-list-item routerLink='/inventory'>
+                        <span class="material-icons-outlined sidenav-icon">
+                            device_hub
+                        </span>
+                        <b>Inventory</b>
+                    </a>
+                </mat-nav-list>
             </mat-nav-list>
         </mat-sidenav>
 
