@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { KeycloakService } from "../../core/auth/keycloak.service";
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatProgressButtonOptions } from 'mat-progress-buttons'
 import { RequestsService } from '../../service/requests.service'
 import { RequestsItem } from '../../models/requests-item'
 import { Requests } from '../../models/requests';
@@ -69,5 +70,31 @@ export class RequestPageComponent implements OnInit {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
+  }
+
+  fabSpinnerButtonOptions: MatProgressButtonOptions = {
+    active: false,
+    text: 'Spinner Button',
+    spinnerSize: 18,
+    raised: true,
+    fab: true,
+    stroked: false,
+    buttonColor: 'primary',
+    spinnerColor: 'accent',
+    fullWidth: false,
+    disabled: false,
+    mode: 'indeterminate',
+    icon: {
+      fontIcon: 'refresh'
+    },
+  }
+
+  someFunc3(): void {
+    this.fabSpinnerButtonOptions.active = true;
+    this.fabSpinnerButtonOptions.text = 'Saving Data...';
+    setTimeout(() => {
+      this.fabSpinnerButtonOptions.active = false;
+      this.fabSpinnerButtonOptions.text = 'Progress Bar Button';
+    }, 3500)
   }
 }
