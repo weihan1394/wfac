@@ -635,8 +635,8 @@
   "services": {
     "leaveType": "Floating Leave",
     "description": "asd",
-    "startDate": "2020-06-10",
-    "endDate": "2020-06-11",
+    "startDate": "2020-06-11",
+    "endDate": "",
     "submit": true,
     "svc_id": "lvereq",
     "svc_icon": "https://cdn3.iconfinder.com/data/icons/geosm-e-commerce/48/exit-3-512.png",

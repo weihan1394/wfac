@@ -97,6 +97,7 @@ export class KeycloakService {
                     })
                     .error(() => {
                         reject('Failed to refresh token');
+                        this.logout();
                     });
             }
         });
