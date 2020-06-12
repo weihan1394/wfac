@@ -16,7 +16,6 @@ import {
   MatProgressBarModule
 } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
-
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { DialogComponent } from './components/dialog/dialog.component';

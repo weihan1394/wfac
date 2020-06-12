@@ -28,10 +28,8 @@ export class DialogComponent {
 
     this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
-        console.log(result);
       },
       err => {
-        console.log(err)
       }
     );
     this.dialogRef.close();

@@ -48,9 +48,7 @@ export class RequestPageComponent implements OnInit {
         let requests = new Requests;
         // parse json to object
         requests = response;
-        console.log(requests);
         this.dataSource = new MatTableDataSource(requests.requests);
-        console.log(this.dataSource.data);
 
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -71,5 +69,22 @@ export class RequestPageComponent implements OnInit {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
+  }
+
+  refreshSource() {
+    console.log("here");
+    // get requests
+    this.requestsService.getRequests().subscribe(
+      response => {
+        let requests = new Requests;
+        // parse json to object
+        requests = response;
+        this.dataSource = new MatTableDataSource(requests.requests);
+
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      }, error => {
+      }
+    )
   }
 }

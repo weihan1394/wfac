@@ -43,9 +43,6 @@ export class ServicesPageComponent implements OnInit {
     // get the username
     KeycloakService.getUserDetails().then(
       userDetails => {
-        // sessionStorage.setItem('loggedUser', data.Username);
-        console.log(userDetails["username"]);
-
         // check if userDetails object has username
         if (userDetails.hasOwnProperty('username')) {
           sessionStorage.loggedUser = userDetails["username"];
@@ -56,18 +53,13 @@ export class ServicesPageComponent implements OnInit {
       }
     );
 
-    
-
     // get provisioning
     this.servicesService.getProvisioning().subscribe(
       response => {
-        console.log("error");
-        console.log(response);
         let provisioningReader = new Services;
         // parse json to object
         provisioningReader = response;
         this.dataSource.data = provisioningReader.services;
-        console.log(this.dataSource.data);
       }, error => {
       }
     )
