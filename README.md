@@ -1,5 +1,5 @@
-# Ang-Material
-PSO Trial Project v0.1-beta
+# WFAC
+PSO WFAC Trial Project v0.1-beta
 
 ## Pre-requisite
 - [Node](https://nodejs.org/en/download/releases/) version 12.16.1
@@ -39,20 +39,15 @@ npm install -g json-server
 Start Server
 ``` sh
 cd json_server
-json-server example/provisioning.json
+json-server provisioning.json
 ```
-Test
-```
-curl http://localhost:4000/provisioning
-```
-Configuration file 
 
 ## Version
-- [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0
-- [FormIO](https://github.com/formio/angular-material-formio) version 1.19.0
-- [Angular Material](https://material.angular.io/) version 8.2.3
-- [Material Design for Bootstrap](https://mdbootstrap.com/docs/angular/) version 8.10.1
-- [Keycloak](https://www.npmjs.com/package/keycloak-angular) version 9.0.3
+- [Angular CLI](https://github.com/angular/angular-cli) ^8.1.0
+- [FormIO](https://github.com/formio/angular-material-formio) ^1.19.0
+- [Angular Material](https://material.angular.io/) ^8.2.3
+- [Material Design for Bootstrap](https://mdbootstrap.com/docs/angular/) ^8.10.1
+- [Keycloak](https://www.npmjs.com/package/keycloak-angular) ^9.0.3
 
 ## Documentation
-- [keycloak-js](https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter) version 9.0.3
+- [keycloak-js](https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter) ^10.0.0
