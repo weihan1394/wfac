@@ -26,15 +26,12 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
 
         //const started = Date.now();
         if (KeycloakService.auth.authz != null && KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated) {
-            KeycloakService.getToken().then(result => {
-                let kcToken = KeycloakService.auth.authz.token;
-                request = request.clone({
-                    setHeaders: {
-                        Authorization: 'Bearer ' + kcToken
-                    }
-                });
-            }).catch(err => {
-                KeycloakService.logout();
+            KeycloakService.getToken()
+            let kcToken = KeycloakService.auth.authz.token;
+            request = request.clone({
+                setHeaders: {
+                    Authorization: 'Bearer ' + kcToken
+                }
             });
         }
 
