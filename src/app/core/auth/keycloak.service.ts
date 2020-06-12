@@ -93,11 +93,13 @@ export class KeycloakService {
             if (KeycloakService.auth.authz.token) {
                 KeycloakService.auth.authz.updateToken(5)
                     .success(() => {
+                        // redirect to logout
                         resolve(<string>KeycloakService.auth.authz.token);
                     })
                     .error(() => {
+                        // redirect to logout
+                        this.logout()
                         reject('Failed to refresh token');
-                        this.logout();
                     });
             }
         });
