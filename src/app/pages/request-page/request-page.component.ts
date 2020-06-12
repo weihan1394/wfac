@@ -2,7 +2,6 @@ import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { KeycloakService } from "../../core/auth/keycloak.service";
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-import { MatProgressButtonOptions } from 'mat-progress-buttons'
 import { RequestsService } from '../../service/requests.service'
 import { RequestsItem } from '../../models/requests-item'
 import { Requests } from '../../models/requests';
@@ -72,29 +71,20 @@ export class RequestPageComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
-  fabSpinnerButtonOptions: MatProgressButtonOptions = {
-    active: false,
-    text: 'Spinner Button',
-    spinnerSize: 18,
-    raised: true,
-    fab: true,
-    stroked: false,
-    buttonColor: 'primary',
-    spinnerColor: 'accent',
-    fullWidth: false,
-    disabled: false,
-    mode: 'indeterminate',
-    icon: {
-      fontIcon: 'refresh'
-    },
-  }
+  refreshSource() {
+    console.log("here");
+    // get requests
+    this.requestsService.getRequests().subscribe(
+      response => {
+        let requests = new Requests;
+        // parse json to object
+        requests = response;
+        this.dataSource = new MatTableDataSource(requests.requests);
 
-  someFunc3(): void {
-    this.fabSpinnerButtonOptions.active = true;
-    this.fabSpinnerButtonOptions.text = 'Saving Data...';
-    setTimeout(() => {
-      this.fabSpinnerButtonOptions.active = false;
-      this.fabSpinnerButtonOptions.text = 'Progress Bar Button';
-    }, 3500)
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      }, error => {
+      }
+    )
   }
 }

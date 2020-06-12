@@ -16,7 +16,6 @@ import {
   MatProgressBarModule
 } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatProgressButtonsModule } from 'mat-progress-buttons';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { DialogComponent } from './components/dialog/dialog.component';
@@ -64,7 +63,6 @@ import { HeaderComponent } from './components/header/header.component';
     MatMenuModule,
     MatSortModule,
     MatProgressBarModule,
-    MatProgressButtonsModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(), // ToastrModule added

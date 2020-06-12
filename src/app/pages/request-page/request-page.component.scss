@@ -37,6 +37,11 @@
   min-width: 100px;
 }
 
+.refresh-fab {
+  float: right;
+  background-color: #00364d
+}
+
 @media (max-width: 600px) {
   .mobile-label {
     width: 100px !important;
