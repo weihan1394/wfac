@@ -25,9 +25,12 @@ export class DialogComponent {
     moreDetails.svc_name = this.provisioningItem.svc_name;
     moreDetails.svc_type = this.provisioningItem.svc_type;
     moreDetails.svc_info = this.provisioningItem.svc_info
+    
+    var resultMessage: string;
 
     this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
+        resultMessage = result.Submission;
         console.log("result");
         console.log(result);
       },
@@ -38,7 +41,7 @@ export class DialogComponent {
     );
     this.dialogRef.close();
 
-    this.toastr.success('', 'Provisioned created!', {
+    this.toastr.success('', resultMessage, {
       progressBar: true,
       closeButton: true,
       progressAnimation: 'decreasing',
