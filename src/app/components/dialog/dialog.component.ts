@@ -34,18 +34,25 @@ export class DialogComponent {
         console.log("result");
         console.log(result);
         console.log(resultMessage);
+
+        this.toastr.success('', resultMessage, {
+          progressBar: true,
+          closeButton: true,
+          progressAnimation: 'decreasing'
+        });
       },
       err => {
         console.log("err");
         console.log(err);
+
+        this.toastr.warning('', err, {
+          progressBar: true,
+          closeButton: true,
+          progressAnimation: 'decreasing'
+        });
       }
     );
-    this.dialogRef.close();
 
-    this.toastr.success('', resultMessage, {
-      progressBar: true,
-      closeButton: true,
-      progressAnimation: 'decreasing'
-    });
+    this.dialogRef.close();
   }
 }
