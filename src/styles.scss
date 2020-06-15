@@ -65,26 +65,32 @@ h1.vmware-app-name {
     right: 12px;
 }
 
-@media (max-width: 575.98px) {
-    .toast-top-right {
-        top: unset;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-    }
-    .toast-container.toast-top-right .toast {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-#toast-container .toast.toast-info {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=") !important;
-}
-
 /* this will set the toastr style */
-.toast-custom {
+.custom-toast {
     background-color: #005478;
-    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAQAAAD8x0bcAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAAd0SU1FB+QFBhMRKNSGtVsAAACHelRYdFJhdyBwcm9maWxlIHR5cGUgZXhpZgAAGNNdjVEOgCAMQ/93Co/QjTHlOBgx8QYeX2CagP1p2nRvVO7rpKWJxUjjulkyQ5UeegCS4dpaBeaW49uxWyi138ee3NXA0g7DcCCdtlrqwAmkBZMSaB4kDDnk14eu77I/meAVJJp9/PsqXwY92ew1OyDtx8sAAADnSURBVCjPrdGxSkMxFMbxL2npUFxd3dTFZxKko8/g7muIuDhJFwUXfQk7OwsugtaC9+fQ297eUjcTCEnO/3wnJ1/yX6PsvtZDyp9AySBNmp1KuvQmZXlRl4FuJklqZJyLHEdK2UAGBu2uqoopZg5FzTqwWosqrvCBczFcKhUxMRFDRXWNT9yIKKv8CTgVcdsi94aidC96wBxnLvGFO6O2dJKl0oEXLDQac0wNVkjbcYvNsPCNJ+N1M70PiCOv4NFeD9nCTrx5NtpGyoYVNU3285P31L5npedYTZO6kuhsLV3R9XkLSX4BhY/dS+Bf6ygAAAB4ZXhJZk1NACoAAAAIAAQBGgAFAAAAAQAAAD4BGwAFAAAAAQAAAEYBKAADAAAAAQACAACHaQAEAAAAAQAAAE4AAAAAAAAAkAAAAAEAAACQAAAAAQADoAEAAwAAAAEAAQAAoAIABAAAAAEAAAAkoAMABAAAAAEAAAAkAAAAAHFN7uIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDUtMDZUMTk6MTc6NDAtMDc6MDCXi3jVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA1LTA2VDE5OjE3OjQwLTA3OjAw5tbAaQAAABF0RVh0ZXhpZjpDb2xvclNwYWNlADEPmwJJAAAAF3RFWHRleGlmOkV4aWZJbWFnZUxlbmd0aAAzNmOfy7UAAAAWdEVYdGV4aWY6RXhpZkltYWdlV2lkdGgAMzYubXYwAAAAEnRFWHRleGlmOkV4aWZPZmZzZXQANzjJ1HsnAAAAAElFTkSuQmCC) !important;
 }
+
+// #toast-container > .toast {
+//     background-image: none !important;
+// }
+
+// #toast-container > .toast:before {
+//     position: relative;
+//     font-size: 24px;
+//     line-height: 18px;
+//     float: left;
+//     margin-left: -1em;
+//     color: #FFF;
+//     padding-right: 50px;
+//     margin-right: 50px;
+// }
+
+.toast-success {
+    background-color: #005478;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'%3E%3Cpath fill='rgb(255,255,255)' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E") !important;
+}
+
+.toast-warning {
+    background-color: #005478;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' width='576' height='512'%3E%3Cpath fill='rgb(255,255,255)' d='M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z'/%3E%3C/svg%3E") !important;
+  }

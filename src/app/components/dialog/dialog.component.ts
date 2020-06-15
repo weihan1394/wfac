@@ -25,20 +25,34 @@ export class DialogComponent {
     moreDetails.svc_name = this.provisioningItem.svc_name;
     moreDetails.svc_type = this.provisioningItem.svc_type;
     moreDetails.svc_info = this.provisioningItem.svc_info
+    
+    var resultMessage: string;
 
     this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
+        resultMessage = result.Submission;
+        console.log("result");
+        console.log(result);
+        console.log(resultMessage);
+
+        this.toastr.success('', resultMessage, {
+          progressBar: true,
+          closeButton: true,
+          progressAnimation: 'decreasing'
+        });
       },
       err => {
+        console.log("err");
+        console.log(err);
+
+        this.toastr.warning('', err, {
+          progressBar: true,
+          closeButton: true,
+          progressAnimation: 'decreasing'
+        });
       }
     );
-    this.dialogRef.close();
 
-    this.toastr.success('', 'Provisioned created!', {
-      progressBar: true,
-      closeButton: true,
-      progressAnimation: 'decreasing',
-      toastClass: 'toast-custom'
-    });
+    this.dialogRef.close();
   }
 }
