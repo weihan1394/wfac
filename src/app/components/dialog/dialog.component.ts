@@ -31,9 +31,9 @@ export class DialogComponent {
     this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
         resultMessage = result.Submission;
-        console.log(resultMessage)
         console.log("result");
         console.log(result);
+        console.log(resultMessage);
       },
       err => {
         console.log("err");
@@ -42,11 +42,10 @@ export class DialogComponent {
     );
     this.dialogRef.close();
 
-    this.toastr.success('', resultMessage, {
+    this.toastr.success('', 'Submitted', {
       progressBar: true,
       closeButton: true,
-      progressAnimation: 'decreasing',
-      toastClass: 'toast-custom'
+      progressAnimation: 'decreasing'
     });
   }
 }
