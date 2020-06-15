@@ -633,9 +633,9 @@
     ]
   },
   "services": {
-    "leaveType": "Floating Leave",
+    "leaveType": "Military Leave",
     "description": "asd",
-    "startDate": "2020-06-09",
+    "startDate": "2020-06-02",
     "endDate": "",
     "submit": true,
     "svc_id": "lvereq",
