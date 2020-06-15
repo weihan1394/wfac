@@ -42,7 +42,7 @@ export class DialogComponent {
     );
     this.dialogRef.close();
 
-    this.toastr.success('', 'Submitted', {
+    this.toastr.success('', resultMessage, {
       progressBar: true,
       closeButton: true,
       progressAnimation: 'decreasing'
