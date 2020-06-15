@@ -31,6 +31,7 @@ export class DialogComponent {
     this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
         resultMessage = result.Submission;
+        console.log(resultMessage)
         console.log("result");
         console.log(result);
       },
