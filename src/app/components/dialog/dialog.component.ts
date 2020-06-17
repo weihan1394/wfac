@@ -31,6 +31,8 @@ export class DialogComponent {
     this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
         resultMessage = result.Message;
+        console.log("succ");
+        console.log(resultMessage);
 
         this.toastr.success('', resultMessage, {
           progressBar: true,
