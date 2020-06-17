@@ -84,7 +84,7 @@ export class InventoryPageComponent implements OnInit {
     }
   }
 
-  result: string = '';
+  result: boolean;
   confirmDialog(element: InventoryItem): void {
     console.log(element);
     const message = 'Are you sure you want to delete ' + element.name + '?';
@@ -98,7 +98,8 @@ export class InventoryPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(dialogResult => {
       this.result = dialogResult;
       console.log(this.result);
-      if (this.result === 'true') {
+      if (this.result) {
+        console.log("deleting")
         this.inventoryService.deleteInventory(element.inventory_Id);
       }
     });
