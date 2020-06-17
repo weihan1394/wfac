@@ -30,10 +30,7 @@ export class DialogComponent {
 
     this.servicesService.sendProvisioning(moreDetails).subscribe(
       result => {
-        resultMessage = result.Submission;
-        console.log("result");
-        console.log(result);
-        console.log(resultMessage);
+        resultMessage = result.Message;
 
         this.toastr.success('', resultMessage, {
           progressBar: true,
@@ -45,7 +42,7 @@ export class DialogComponent {
         console.log("err");
         console.log(err);
 
-        this.toastr.warning('', err, {
+        this.toastr.warning('', err.Message, {
           progressBar: true,
           closeButton: true,
           progressAnimation: 'decreasing'
