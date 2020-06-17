@@ -32,13 +32,15 @@ export class InventoryService {
     let errorMessage: string = "";
 
     if (error.error instanceof ErrorEvent) {
-      errorMessage = "An unknown error has occurred: " + error.error.message;
+      // errorMessage = "An unknown error has occurred: " + error.error.message;
+      errorMessage = error.error.message;
     }
     else {
-      errorMessage = "A HTTP error has occurred: " + `HTTP ${error.status}: ${error.error.message}`;
+      // errorMessage = "A HTTP error has occurred: " + `HTTP ${error.status}: ${error.error.message}`;
+      errorMessage = error.error.message;
     }
 
-    console.error(error);
+    console.error(error.error.message);
     console.error(errorMessage);
 
     return throwError(errorMessage);
