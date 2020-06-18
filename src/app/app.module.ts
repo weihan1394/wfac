@@ -38,6 +38,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HeaderComponent } from './components/header/header.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { ViewDialogComponent } from './components/view-dialog/view-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     RequestPageComponent,
     InventoryPageComponent,
     HeaderComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    ViewDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +84,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
   bootstrap: [MainComponent],
   entryComponents: [
     DialogComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    ViewDialogComponent
   ]
 })
 export class AppModule { }

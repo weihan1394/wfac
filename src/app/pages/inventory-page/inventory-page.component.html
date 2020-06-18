@@ -116,7 +116,7 @@
                             <ng-container matColumnDef="actions">
                                 <mat-header-cell *matHeaderCellDef></mat-header-cell>
                                 <mat-cell *matCellDef="let element">
-                                     <button mat-button style="color: #00364d;">View</button>
+                                     <button mat-button style="color: #00364d;" (click)="viewDialog(element)">View</button>
                                      <button mat-button style="color: #00364d;" (click)="confirmDialog(element)">Delete</button>
                                 </mat-cell>
                               </ng-container>

@@ -8,6 +8,7 @@ import { InventoryItem } from 'src/app/models/inventory-item';
 import { ConfirmDialogModel, ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
+import { ViewDialogComponent, ViewDialogModel } from 'src/app/components/view-dialog/view-dialog.component';
 
 @Component({
   selector: 'app-inventory-page',
@@ -87,7 +88,6 @@ export class InventoryPageComponent implements OnInit {
 
   result: boolean;
   confirmDialog(element: InventoryItem): void {
-    console.log(element);
     const message = 'Are you sure you want to delete ' + element.name + '?';
     const dialogData = new ConfirmDialogModel("Confirmation", message);
 
@@ -120,6 +120,15 @@ export class InventoryPageComponent implements OnInit {
             });
           });
       }
+    });
+  }
+
+  viewDialog(element: InventoryItem): void {
+    const dialogData = new ViewDialogModel(element);
+    const dialogRef = this.dialog.open(ViewDialogComponent, {
+      minWidth: "180px",
+      maxWidth: "400px",
+      data: dialogData
     });
   }
 }
