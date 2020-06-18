@@ -42,9 +42,6 @@ export class ServicesService {
       // errorMessage = "A HTTP error has occurred: " + `HTTP ${error.status}: ${error.error.message}`;
       errorMessage = error.error.message;
     }
-    
-    console.error(error);
-    console.error(errorMessage);
 
     return throwError(errorMessage);
   }

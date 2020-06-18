@@ -21,8 +21,10 @@ export class InventoryService {
   }
 
   deleteInventory(inventory: any): Observable<any> {
-    console.log("here")
-    return this.httpClient.delete<any>(this.baseUrl + "/inventory").pipe
+    console.log("here");
+    console.log(inventory);
+    
+    return this.httpClient.delete<any>(this.baseUrl + "/inventory/" + inventory).pipe
       (
         catchError(this.handleError)
       )
@@ -39,10 +41,7 @@ export class InventoryService {
       // errorMessage = "A HTTP error has occurred: " + `HTTP ${error.status}: ${error.error.message}`;
       errorMessage = error.error.message;
     }
-
-    console.error(error.error.message);
-    console.error(errorMessage);
-
+    
     return throwError(errorMessage);
   }
 }

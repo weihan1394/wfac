@@ -10,7 +10,7 @@
                 arrow_drop_down
             </span></button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="getKeycloakService().getUserDetails()">Profile</button>
+            <button mat-menu-item (click)="getKeycloakService().redirectProfile('services')">Profile</button>
             <button mat-menu-item (click)="getKeycloakService().logout()">Logout</button>
         </mat-menu>
     </mat-toolbar>

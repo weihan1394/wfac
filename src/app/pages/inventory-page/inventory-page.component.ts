@@ -7,6 +7,7 @@ import { Inventory } from 'src/app/models/inventory';
 import { InventoryItem } from 'src/app/models/inventory-item';
 import { ConfirmDialogModel, ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-inventory-page',
@@ -25,7 +26,7 @@ export class InventoryPageComponent implements OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private inventoryService: InventoryService, public dialog: MatDialog) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private inventoryService: InventoryService, public dialog: MatDialog, private toastr: ToastrService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -98,9 +99,26 @@ export class InventoryPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(dialogResult => {
       this.result = dialogResult;
       console.log(this.result);
+      // confirm delete
       if (this.result) {
-        console.log("deleting")
-        this.inventoryService.deleteInventory(element.inventory_Id);
+        // delete from service
+        this.inventoryService.deleteInventory(element.inventory_Id).subscribe(
+          result => {
+            this.toastr.success('', result.message, {
+              progressBar: true,
+              closeButton: true,
+              progressAnimation: 'decreasing'
+            });
+
+            this.refreshSource();
+          },
+          err => {
+            this.toastr.warning('', err, {
+              progressBar: true,
+              closeButton: true,
+              progressAnimation: 'decreasing'
+            });
+          });
       }
     });
   }
