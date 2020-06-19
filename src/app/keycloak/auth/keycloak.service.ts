@@ -134,6 +134,6 @@ export class KeycloakService {
 
     // Redirect to profile page
     static redirectProfile(page: string) {
-        window.location.href = 'https://idm-wfacp.psoseak.org/auth/realms/WFAC/account?referrer=wfac-api&referrer_uri=https://portal-wfacp.psoseak.org/' + page;
+        window.location.href = 'https://idm-wfacp.psoseak.org/auth/realms/WFAC/account?referrer=wfac-fe&referrer_uri=https://portal-wfacp.psoseak.org/' + page;
     }
 }
