@@ -4,7 +4,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { KeycloakService } from "./app/core/auth/keycloak.service";
+import { KeycloakService } from "./app/keycloak/auth/keycloak.service";
 
 if (environment.production) {
   enableProdMode();

@@ -8,5 +8,5 @@
 </h2>
 
 <div mat-dialog-content>
-    <div [innerHtml]="inventoryDetails"></div>
+    <div  [innerHtml]="inventoryDetails | safeHtml"></div>
 </div>

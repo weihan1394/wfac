@@ -10,7 +10,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { KeycloakService } from "../../core/auth/keycloak.service";
+import { KeycloakService } from "../../keycloak/auth/keycloak.service";
 
 import { ServicesService } from '../../service/services.service';
 import { Services } from '../../models/services';
