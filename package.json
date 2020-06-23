@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "^8.2.14",
     "@angular/router": "^8.2.14",
     "angular-bootstrap-md": "^8.10.1",
-    "chart.js": "^2.5.0",
+    "chart.js": "^2.9.3",
     "font-awesome": "^4.7.0",
     "angular-material-formio": "^1.19.0",
     "formiojs": "^4.10.3-rc.3",
