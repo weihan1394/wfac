@@ -20,7 +20,7 @@ export class KeycloakService {
 
         return new Promise((resolve, reject) => {
             keycloakAuth.init({ onLoad: 'check-sso' })
-                .success(() => {
+                .then(() => {
                     KeycloakService.auth.loggedIn = true;
                     KeycloakService.auth.authz = keycloakAuth;
                     KeycloakService.auth.registerUrl = KeycloakService.auth.authz.createRegisterUrl();
@@ -28,7 +28,7 @@ export class KeycloakService {
 
                     resolve();
                 })
-                .error(() => {
+                .catch(() => {
                     reject();
                 });
         });
@@ -92,11 +92,11 @@ export class KeycloakService {
         return new Promise<string>((resolve, reject) => {
             if (KeycloakService.auth.authz.token) {
                 KeycloakService.auth.authz.updateToken(5)
-                    .success(() => {
+                    .then(() => {
                         // redirect to logout
                         resolve(<string>KeycloakService.auth.authz.token);
                     })
-                    .error(() => {
+                    .catch(() => {
                         // redirect to logout
                         this.logout()
                         reject('Failed to refresh token');
