@@ -18,13 +18,13 @@ p{
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+    background-color: #00364d;
+    border-color: #00364d;
 }
 .btn-primary {
     color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+    background-color: #00364d;
+    border-color: #00364d;
 }
 .btn-round {
     border-radius: 30px !important;
@@ -61,14 +61,10 @@ p{
 /*[404 error page]
 --------------------------*/
 .error-content {
-    padding: 0 0 70px;
+    padding: 200px 0 70px;
 }
 .error-text{
     text-align: center;
-}
-.error {
-    font-size: 180px;
-    font-weight: 100;
 }
 @keyframes bob {
     0% {
@@ -181,7 +177,7 @@ p{
     width: 7em;
     height: 7em;
     border-radius: 100%;
-    background: #0054D1;
+    background: darkgrey;
     position: relative;
     vertical-align: middle;
     margin-right: -3em;

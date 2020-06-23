@@ -14,21 +14,29 @@ import { Error404PageComponent } from './pages/error404-page/error404-page.compo
 const routes: Routes = [{
     path: 'services',
     component: ServicesPageComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   {
     path: 'request',
     component: RequestPageComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   {
     path: 'inventory',
     component: InventoryPageComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   { path: '', redirectTo: 'services', pathMatch: 'full' },
-  {path: '404', component: Error404PageComponent},
-  {path: '**', redirectTo: '/404'}
+  { 
+    path: '404', 
+    component: Error404PageComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: '**', 
+    redirectTo: '/404',
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
