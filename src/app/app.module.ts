@@ -32,7 +32,6 @@ import { ViewDialogComponent } from './components/view-dialog/view-dialog.compon
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { RequestPageComponent } from './pages/request-page/request-page.component';
 import { InventoryPageComponent } from './pages/inventory-page/inventory-page.component';
-import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 
 // keycloak
 import { KeycloakService } from "./keycloak/auth/keycloak.service";
@@ -59,8 +58,7 @@ import { SafeHtmlPipe } from './common/safe-html.pipe';
     HeaderComponent,
     ConfirmDialogComponent,
     ViewDialogComponent,
-    SafeHtmlPipe,
-    Error404PageComponent
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
