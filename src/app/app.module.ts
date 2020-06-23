@@ -27,9 +27,9 @@ import { RequestPageComponent } from './pages/request-page/request-page.componen
 import { InventoryPageComponent } from './pages/inventory-page/inventory-page.component';
 
 // keycloak
-import { KeycloakService } from "./core/auth/keycloak.service";
-import { AuthGuardService } from "./core/guard/auth-guard.service";
-import { SecuredHttpInterceptor } from './core/interceptor/secured-http.interceptor';
+import { KeycloakService } from "./keycloak/auth/keycloak.service";
+import { AuthGuardService } from "./keycloak/guard/auth-guard.service";
+import { SecuredHttpInterceptor } from './keycloak/interceptor/secured-http.interceptor';
 
 // ngx-toastr
 import { ToastrModule } from 'ngx-toastr';
@@ -37,6 +37,9 @@ import { ToastrModule } from 'ngx-toastr';
 // spinner
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HeaderComponent } from './components/header/header.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { ViewDialogComponent } from './components/view-dialog/view-dialog.component';
+import { SafeHtmlPipe } from './common/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { HeaderComponent } from './components/header/header.component';
     ServicesPageComponent,
     RequestPageComponent,
     InventoryPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    ConfirmDialogComponent,
+    ViewDialogComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
@@ -79,7 +85,9 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   bootstrap: [MainComponent],
   entryComponents: [
-    DialogComponent
+    DialogComponent,
+    ConfirmDialogComponent,
+    ViewDialogComponent
   ]
 })
 export class AppModule { }

@@ -1,0 +1,80 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+  .mat-cell {
+    margin-right: 20px;
+  }
+  
+  .mat-cell-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .mobile-label {
+    display: none;
+  }
+  
+  .progress-bar {
+    min-width: 100px;
+  }
+  
+  .refresh-fab {
+    float: right;
+    background-color: #00364d
+  }
+  
+  @media (max-width: 600px) {
+    .mobile-label {
+      width: 100px !important;
+      display: inline-block;
+      font-weight: bold;
+    }
+  
+    .mat-header-row {
+      display: none;
+    }
+  
+    .mat-row {
+      flex-direction: column;
+      align-items: start;
+      padding: 8px 24px;
+    }
+  
+    .mat-cell:first-of-type,
+    mat-footer-cell:first-of-type,
+    mat-header-cell:first-of-type {
+      padding-left: 0px;
+    }
+  
+    .mat-progress-bar {
+      min-width: 100%;
+    }
+  
+    .content {
+      padding: 20px 20px 50px 20px;
+    }
+  
+    .progress-bar {
+      min-width: 80px;
+    }
+  }
+  

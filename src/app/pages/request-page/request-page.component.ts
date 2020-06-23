@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { KeycloakService } from "../../core/auth/keycloak.service";
+import { KeycloakService } from "../../keycloak/auth/keycloak.service";
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { RequestsService } from '../../service/requests.service'
 import { RequestsItem } from '../../models/requests-item'
@@ -72,7 +72,6 @@ export class RequestPageComponent implements OnInit {
   }
 
   refreshSource() {
-    console.log("here");
     // get requests
     this.requestsService.getRequests().subscribe(
       response => {

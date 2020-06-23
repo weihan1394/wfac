@@ -7,7 +7,7 @@ import { RequestPageComponent } from './pages/request-page/request-page.componen
 import { InventoryPageComponent } from './pages/inventory-page/inventory-page.component';
 
 // auth-guard
-import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
+import { AuthGuardService as AuthGuard } from './keycloak/guard/auth-guard.service';
 
 
 const routes: Routes = [{

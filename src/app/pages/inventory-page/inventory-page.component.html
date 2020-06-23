@@ -6,9 +6,11 @@
         <h1 class="vmware-app-name">VMware</h1>
 
         <div class="spacer"></div>
-        <button mat-button [matMenuTriggerFor]="menu">{{username}}</button>
+        <button mat-button [matMenuTriggerFor]="menu">{{username}}<span class="material-icons">
+                arrow_drop_down
+            </span></button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="getKeycloakService().getUserDetails()">Profile</button>
+            <button mat-menu-item (click)="getKeycloakService().redirectProfile('inventory')">Profile</button>
             <button mat-menu-item (click)="getKeycloakService().logout()">Logout</button>
         </mat-menu>
     </mat-toolbar>
@@ -44,6 +46,87 @@
                 <div class="row">
                     <div class="col">
                         <h2 class="primary-heading">Inventory</h2>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top: 20px;">
+                    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate"
+                        [fullScreen]="true">
+                        <p style="color: white"> Loading... </p>
+                    </ngx-spinner>
+                    <div class="col-11">
+                        <div class="example-header">
+                            <mat-form-field>
+                                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                         <button class="refresh-fab" mat-mini-fab aria-label="refresh source" (click)="refreshSource()">
+                            <mat-icon>refresh</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 20px;">
+                    <div class="col-12">
+                        <mat-table [dataSource]="dataSource" matSort matSortActive="submittedOn"
+                            matSortDirection="asc">
+    
+                            <!-- ID Column -->
+                            <ng-container matColumnDef="inventory_Id">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <span class="mobile-label">ID: </span>
+                                    {{ element.inventory_Id }}
+                                </mat-cell>
+                            </ng-container>
+    
+                            <ng-container matColumnDef="svc_type">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <span class="mobile-label">Type: </span>
+                                    <img [src]="element.svc_icon" class="mat-cell-img" /> {{element.svc_type}}
+                                </mat-cell>
+                            </ng-container>
+    
+                            <ng-container matColumnDef="name">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <span class="mobile-label">Name: </span>
+                                    {{element.name}}
+                                </mat-cell>
+                            </ng-container>
+    
+                            <ng-container matColumnDef="submittedOn">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Submitted </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <span class="mobile-label">Submitted: </span>
+                                    {{element.submittedOn}}
+                                </mat-cell>
+                            </ng-container>
+    
+                            <ng-container matColumnDef="createdOn">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Created </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <span class="mobile-label">Created: </span>
+                                    {{element.createdOn}}
+                                </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="actions">
+                                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                     <button mat-button style="color: #00364d;" (click)="viewDialog(element)">View</button>
+                                     <button mat-button style="color: #00364d;" (click)="confirmDialog(element)">Delete</button>
+                                </mat-cell>
+                              </ng-container>
+    
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;">
+                            </mat-row>
+                        </mat-table>
+    
+                        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
                     </div>
                 </div>
             </div>

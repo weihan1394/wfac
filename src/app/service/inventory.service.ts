@@ -4,28 +4,24 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment'
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-
 @Injectable({
   providedIn: 'root'
 })
-export class ServicesService {
+export class InventoryService {
 
   constructor(private httpClient: HttpClient) { }
 
   baseUrl: string = environment.backend.baseURL;
 
-  getProvisioning(): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl + "/forms").pipe
+  getInventory(): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl + "/inventory").pipe
       (
         catchError(this.handleError)
       )
   }
 
-  sendProvisioning(result: any): Observable<any> {
-    return this.httpClient.post<any>(this.baseUrl + "/services", result, httpOptions).pipe
+  deleteInventory(inventory: any): Observable<any> {
+    return this.httpClient.delete<any>(this.baseUrl + "/inventory/" + inventory).pipe
       (
         catchError(this.handleError)
       )
@@ -42,7 +38,7 @@ export class ServicesService {
       // errorMessage = "A HTTP error has occurred: " + `HTTP ${error.status}: ${error.error.message}`;
       errorMessage = error.error.message;
     }
-
+    
     return throwError(errorMessage);
   }
 }

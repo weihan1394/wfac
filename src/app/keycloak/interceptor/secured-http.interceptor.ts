@@ -37,8 +37,6 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
 
         return next.handle(request)
             .pipe(tap(
-                // event => console.log(event),
-                // error => console.log(error)
             ), finalize(() => {
                 this.count--;
                 if (this.count == 0) {
