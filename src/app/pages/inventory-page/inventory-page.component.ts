@@ -64,7 +64,6 @@ export class InventoryPageComponent implements OnInit {
   }
 
   refreshSource() {
-    console.log("here");
     // get requests
     this.inventoryService.getInventory().subscribe(
       response => {
@@ -82,7 +81,6 @@ export class InventoryPageComponent implements OnInit {
 
   clickMethod(name: string) {
     if (confirm("Are you sure to delete " + name)) {
-      console.log("Implement delete functionality here");
     }
   }
 
@@ -98,7 +96,6 @@ export class InventoryPageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(dialogResult => {
       this.result = dialogResult;
-      console.log(this.result);
       // confirm delete
       if (this.result) {
         // delete from service

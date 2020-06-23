@@ -21,9 +21,6 @@ export class InventoryService {
   }
 
   deleteInventory(inventory: any): Observable<any> {
-    console.log("here");
-    console.log(inventory);
-    
     return this.httpClient.delete<any>(this.baseUrl + "/inventory/" + inventory).pipe
       (
         catchError(this.handleError)

@@ -22,7 +22,6 @@ body {
 
 .example-is-mobile .vmware-toolbar {
     position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
     z-index: 2;
 }
 
@@ -69,21 +68,6 @@ h1.vmware-app-name {
 .custom-toast {
     background-color: #005478;
 }
-
-// #toast-container > .toast {
-//     background-image: none !important;
-// }
-
-// #toast-container > .toast:before {
-//     position: relative;
-//     font-size: 24px;
-//     line-height: 18px;
-//     float: left;
-//     margin-left: -1em;
-//     color: #FFF;
-//     padding-right: 50px;
-//     margin-right: 50px;
-// }
 
 .toast-success {
     background-color: #005478;

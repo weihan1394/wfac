@@ -72,7 +72,6 @@ export class RequestPageComponent implements OnInit {
   }
 
   refreshSource() {
-    console.log("here");
     // get requests
     this.requestsService.getRequests().subscribe(
       response => {

@@ -14,8 +14,6 @@ export class ViewDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<ViewDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ViewDialogModel) { 
-      console.log(data);
-      console.log(data.element);
       this.inventoryId = data.element.name;
       this.inventoryDetails = data.element.details;
     }
