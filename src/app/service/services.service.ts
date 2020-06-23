@@ -25,7 +25,7 @@ export class ServicesService {
   }
 
   sendProvisioning(result: any): Observable<any> {
-    return this.httpClient.post<any>(this.baseUrl + "/services", {observe: 'response'}, httpOptions).pipe
+    return this.httpClient.post<any>(this.baseUrl + "/services", result, httpOptions).pipe
       (
         catchError(this.handleError)
       )

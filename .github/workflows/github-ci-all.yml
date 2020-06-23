@@ -17,7 +17,7 @@ jobs:
 
       - name: Build
         run: |
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/ang-material:v0.1.0
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/wfac:v0.1.0
           docker build -t $IMAGE_ID .
       
       - name: Login registry
@@ -43,5 +43,5 @@ jobs:
           # echo VERSION=$VERSION
 
           # docker tag image $IMAGE_ID:$VERSION
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/ang-material:v0.1.0
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/wfac:v0.0.1
           docker push $IMAGE_ID
