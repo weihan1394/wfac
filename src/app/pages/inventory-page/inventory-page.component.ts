@@ -91,7 +91,8 @@ export class InventoryPageComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: "400px",
-      data: dialogData
+      data: dialogData,
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(dialogResult => {
@@ -125,7 +126,8 @@ export class InventoryPageComponent implements OnInit {
     const dialogRef = this.dialog.open(ViewDialogComponent, {
       minWidth: "180px",
       maxWidth: "400px",
-      data: dialogData
+      data: dialogData,
+      disableClose: true
     });
   }
 }
