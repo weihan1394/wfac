@@ -3,28 +3,20 @@ name: wfac
 # trigger the workflow when someone pushes the code to repo
 on:
   push
-    # branches:
-    #   - '*'         # matches every branch
 
 jobs:
-  # Run tests.
-  # See also https://docs.docker.com/docker-hub/builds/automated-testing/
-  build:
-    runs-on: ubuntu-latest
-
+  docker:
+    name: Publish - Github Package
+    runs-on: ubuntu-18.04
+    env:
+      REPO: docker.pkg.github.com/${{ github.repository }}/wfac:v0.0.1
     steps:
       - uses: actions/checkout@v2
-
       - name: Build
-        run: |
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/wfac:v0.0.1
-          docker build -t $IMAGE_ID .
+        run: docker build -t $REPO .
       
       - name: Login registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: Push image
-        run: |
-          # docker tag image $IMAGE_ID:$VERSION
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/wfac:v0.0.1
-          docker push $IMAGE_ID
+        run: docker push $REPO
