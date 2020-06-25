@@ -23,7 +23,6 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
         // spinner
         this.spinner.show()
         this.count++;
-
         //const started = Date.now();
         if (KeycloakService.auth.authz != null && KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated) {
             KeycloakService.getToken()
@@ -33,9 +32,8 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
                     Authorization: 'Bearer ' + kcToken
                 }
             });
-        }
 
-        return next.handle(request)
+            return next.handle(request)
             .pipe(tap(
             ), finalize(() => {
                 this.count--;
@@ -44,5 +42,10 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
                 }
             })
             );
+        } else {
+            // logout if keycloakservice is not available
+            KeycloakService.logout();
+        }
+        
     }
 }
