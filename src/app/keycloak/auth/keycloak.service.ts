@@ -91,15 +91,12 @@ export class KeycloakService {
     static getToken(): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             if (KeycloakService.auth.authz.token) {
-                console.log("1");
                 KeycloakService.auth.authz.updateToken(5)
                     .then(() => {
-                        console.log("2");
                         // redirect to logout
                         resolve(<string>KeycloakService.auth.authz.token);
                     })
                     .catch(() => {
-                        console.log("3");
                         // redirect to logout
                         this.logout()
                         reject('Failed to refresh token');
