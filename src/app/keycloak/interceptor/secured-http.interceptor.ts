@@ -38,11 +38,8 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
                     Authorization: 'Bearer ' + kcToken
                 }
             });
-        } else {
-            console.log("trying to logout at interceptor..")
-            KeycloakService.logout();
-        }
-        return next.handle(request)
+
+            return next.handle(request)
             .pipe(tap(
             ), finalize(() => {
                 this.count--;
@@ -51,5 +48,10 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
                 }
             })
             );
+        } else {
+            console.log("trying to logout at interceptor..")
+            KeycloakService.logout();
+        }
+        
     }
 }
