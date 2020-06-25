@@ -23,7 +23,11 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
         // spinner
         this.spinner.show()
         this.count++;
-
+        
+        console.log("trying to intercept..");
+        console.log(KeycloakService.auth.authz);
+        console.log(KeycloakService.auth.loggedIn);
+        console.log(KeycloakService.auth.authz.authenticated)
         //const started = Date.now();
         if (KeycloakService.auth.authz != null && KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated) {
             KeycloakService.getToken()
@@ -34,8 +38,10 @@ export class SecuredHttpInterceptor implements HttpInterceptor {
                     Authorization: 'Bearer ' + kcToken
                 }
             });
+        } else {
+            console.log("trying to logout at interceptor..")
+            KeycloakService.logout();
         }
-
         return next.handle(request)
             .pipe(tap(
             ), finalize(() => {
